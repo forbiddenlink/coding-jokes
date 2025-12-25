@@ -1,4 +1,3 @@
-/* eslint-env browser */
 // Joke management
 const jokesManager = {
     jokes: [],
@@ -3051,13 +3050,6 @@ const jokesManager = {
             punchline.setAttribute('aria-expanded', 'true');
             punchline.classList.add('animate__animated', 'animate__fadeIn');
             this.announceToScreenReader('Punchline revealed');
-            
-            // Track joke view for stats
-            const jokeId = parseInt(joke.dataset.id, 10);
-            const category = joke.dataset.category;
-            if (window.statsManager) {
-                window.statsManager.trackJokeView(jokeId, category);
-            }
         } else {
             icon.className = 'fas fa-eye';
             revealButton.querySelector('span').textContent = 'Reveal';
@@ -3087,7 +3079,7 @@ const jokesManager = {
     },
     
     handleReaction(joke, button) {
-        const jokeId = parseInt(joke.dataset.id, 10);
+        const jokeId = parseInt(joke.dataset.id);
         const emoji = button.dataset.emoji;
         
         if (!this.reactions[jokeId]) {
@@ -3103,11 +3095,6 @@ const jokesManager = {
         setTimeout(() => {
             button.classList.remove('animate__animated', 'animate__bounce');
         }, 600);
-        
-        // Track reaction for stats
-        if (this.reactions[jokeId][emoji] && window.statsManager) {
-            window.statsManager.trackReaction();
-        }
         
         // Save to localStorage
         this.saveReactions();
@@ -3127,7 +3114,7 @@ const jokesManager = {
     },
     
     toggleLike(joke) {
-        const jokeId = parseInt(joke.dataset.id, 10);
+        const jokeId = parseInt(joke.dataset.id);
         const jokeObj = this.jokes.find(j => j.id === jokeId);
         if (!jokeObj) return;
 

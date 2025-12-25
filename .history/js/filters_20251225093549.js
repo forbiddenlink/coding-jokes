@@ -1,4 +1,3 @@
-/* eslint-env browser */
 // Filter functionality
 const filterManager = {
     currentCategory: 'all',

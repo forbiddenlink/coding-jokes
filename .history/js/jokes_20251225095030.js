@@ -1,4 +1,3 @@
-/* eslint-env browser */
 // Joke management
 const jokesManager = {
     jokes: [],
@@ -3051,13 +3050,6 @@ const jokesManager = {
             punchline.setAttribute('aria-expanded', 'true');
             punchline.classList.add('animate__animated', 'animate__fadeIn');
             this.announceToScreenReader('Punchline revealed');
-            
-            // Track joke view for stats
-            const jokeId = parseInt(joke.dataset.id, 10);
-            const category = joke.dataset.category;
-            if (window.statsManager) {
-                window.statsManager.trackJokeView(jokeId, category);
-            }
         } else {
             icon.className = 'fas fa-eye';
             revealButton.querySelector('span').textContent = 'Reveal';
@@ -3066,68 +3058,8 @@ const jokesManager = {
         }
     },
     
-    renderReactions(joke) {
-        const reactionTypes = ['\ud83d\ude02', '\ud83e\udd13', '\ud83d\udc80', '\ud83d\udd25', '\ud83e\udd14'];
-        const jokeReactions = this.reactions[joke.id] || {};
-        
-        return `
-            <div class="reaction-picker">
-                ${reactionTypes.map(emoji => {
-                    const isActive = jokeReactions[emoji] || false;
-                    return `
-                        <button class="reaction-button ${isActive ? 'active' : ''}" 
-                                data-emoji="${emoji}"
-                                aria-label="React with ${emoji}">
-                            <span class="reaction-emoji">${emoji}</span>
-                        </button>
-                    `;
-                }).join('')}
-            </div>
-        `;
-    },
-    
-    handleReaction(joke, button) {
-        const jokeId = parseInt(joke.dataset.id, 10);
-        const emoji = button.dataset.emoji;
-        
-        if (!this.reactions[jokeId]) {
-            this.reactions[jokeId] = {};
-        }
-        
-        // Toggle the reaction
-        this.reactions[jokeId][emoji] = !this.reactions[jokeId][emoji];
-        
-        // Animate the button
-        button.classList.toggle('active');
-        button.classList.add('animate__animated', 'animate__bounce');
-        setTimeout(() => {
-            button.classList.remove('animate__animated', 'animate__bounce');
-        }, 600);
-        
-        // Track reaction for stats
-        if (this.reactions[jokeId][emoji] && window.statsManager) {
-            window.statsManager.trackReaction();
-        }
-        
-        // Save to localStorage
-        this.saveReactions();
-        
-        // Update joke object likes count based on all reactions
-        const jokeObj = this.jokes.find(j => j.id === jokeId);
-        if (jokeObj) {
-            const activeReactions = Object.values(this.reactions[jokeId] || {}).filter(Boolean).length;
-            jokeObj.likes = activeReactions;
-            
-            // Update like count if legacy like button exists
-            const likeCount = joke.querySelector('.like-count');
-            if (likeCount) {
-                likeCount.textContent = jokeObj.likes;
-            }
-        }
-    },
-    
     toggleLike(joke) {
-        const jokeId = parseInt(joke.dataset.id, 10);
+        const jokeId = parseInt(joke.dataset.id);
         const jokeObj = this.jokes.find(j => j.id === jokeId);
         if (!jokeObj) return;
 

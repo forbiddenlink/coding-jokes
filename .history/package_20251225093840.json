@@ -1,10 +1,10 @@
 {
   "name": "coding-jokes",
-  "version": "3.0.0",
-  "description": "A modern web application with 400+ programming jokes, emoji reactions, achievements, 3D effects, and personal stats tracking",
+  "version": "2.0.0",
+  "description": "A modern web application showcasing programming jokes with search, filter, and social features",
   "author": "Elizabeth Stein",
   "license": "MIT",
-  "keywords": ["programming", "jokes", "humor", "web-app", "javascript", "gamification", "achievements", "3d-effects", "modern-design"],
+  "keywords": ["programming", "jokes", "humor", "web-app", "javascript"],
   "scripts": {
     "start": "vite",
     "dev": "vite",

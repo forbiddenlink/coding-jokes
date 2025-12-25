@@ -1,4 +1,3 @@
-/* eslint-env browser */
 // Joke management
 const jokesManager = {
     jokes: [],
@@ -6,15 +5,13 @@ const jokesManager = {
     featuredJokes: [],
     currentPage: 1,
     jokesPerPage: 6,
-    likedJokes: new Set(), // Keep for backward compatibility
-    reactions: {}, // { jokeId: { '😂': true, '🤓': false, ... } }
+    likedJokes: new Set(),
     currentFilter: 'all',
     currentSearch: '',
     sortBy: 'newest', // newest, popular, category
     
     init() {
         this.loadLikedJokes();
-        this.loadReactions();
         this.loadJokes();
         this.loadFeaturedJokes();
         this.addEventListeners();
@@ -32,17 +29,6 @@ const jokesManager = {
     
     saveLikedJokes() {
         localStorage.setItem('likedJokes', JSON.stringify([...this.likedJokes]));
-    },
-    
-    loadReactions() {
-        const saved = localStorage.getItem('jokeReactions');
-        if (saved) {
-            this.reactions = JSON.parse(saved);
-        }
-    },
-    
-    saveReactions() {
-        localStorage.setItem('jokeReactions', JSON.stringify(this.reactions));
     },
     
     loadJokes() {
@@ -1969,846 +1955,6 @@ const jokesManager = {
                         answer: "Too many unresolved notifications! 📱",
                         category: "mobile",
                         likes: 0
-                    },
-                    {
-                        id: 282,
-                        question: "Why did the developer break up with GitHub Copilot?",
-                        answer: "It kept autocompleting their sentences! 🤖",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 283,
-                        question: "What's a remote developer's favorite exercise?",
-                        answer: "Zoom-ba! 💃",
-                        category: "startup",
-                        likes: 0
-                    },
-                    {
-                        id: 284,
-                        question: "Why do Next.js developers never get lost?",
-                        answer: "They always know the route! 🗺️",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 285,
-                        question: "What's TypeScript's favorite music genre?",
-                        answer: "Type-safe! 🎵",
-                        category: "javascript",
-                        likes: 0
-                    },
-                    {
-                        id: 286,
-                        question: "Why did the Docker container go to therapy?",
-                        answer: "It had isolation issues! 🐳",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 287,
-                        question: "What do you call a React hook that's always happy?",
-                        answer: "useState(true)! 😊",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 288,
-                        question: "Why do AWS developers always win at poker?",
-                        answer: "They know when to scale! 🃏",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 289,
-                        question: "What's a microservice's worst fear?",
-                        answer: "Being monolithic! 😱",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 290,
-                        question: "Why did the AI refuse to write code?",
-                        answer: "It didn't have the right training data! 🤖",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 291,
-                        question: "What's Kubernetes' favorite game?",
-                        answer: "Pod racing! 🏎️",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 292,
-                        question: "Why do Vue developers always stay calm?",
-                        answer: "They're very reactive! 🧘",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 293,
-                        question: "What did the serverless function say to the server?",
-                        answer: "I don't need you anymore! 🚀",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 294,
-                        question: "Why did the developer love Tailwind CSS?",
-                        answer: "It was a class act! 💅",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 295,
-                        question: "What's a CI/CD pipeline's favorite song?",
-                        answer: "Push It by Salt-N-Pepa! 🎶",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 296,
-                        question: "Why do GraphQL developers never argue?",
-                        answer: "They only query what they need! 📊",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 297,
-                        question: "What's a Slack message's biggest fear?",
-                        answer: "@channel! 😰",
-                        category: "startup",
-                        likes: 0
-                    },
-                    {
-                        id: 298,
-                        question: "Why did the developer cry during the standup?",
-                        answer: "They said 'no blockers' but there were so many! 😭",
-                        category: "startup",
-                        likes: 0
-                    },
-                    {
-                        id: 299,
-                        question: "What's a Zoom call's favorite snack?",
-                        answer: "Cookies (you're muted edition)! 🍪",
-                        category: "startup",
-                        likes: 0
-                    },
-                    {
-                        id: 300,
-                        question: "Why do Rust developers sleep well?",
-                        answer: "No memory leaks to worry about! 😴",
-                        category: "general",
-                        likes: 0
-                    },
-                    {
-                        id: 301,
-                        question: "What did the MongoDB say to the SQL database?",
-                        answer: "You're too relational! 🙄",
-                        category: "database",
-                        likes: 0
-                    },
-                    {
-                        id: 302,
-                        question: "Why did ChatGPT fail the coding interview?",
-                        answer: "It couldn't stop hallucinating features! 🤯",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 303,
-                        question: "What's a developer's favorite type of coffee?",
-                        answer: "Java, but only if it's not deprecated! ☕",
-                        category: "java",
-                        likes: 0
-                    },
-                    {
-                        id: 304,
-                        question: "Why do React developers love fishing?",
-                        answer: "They're always catching hooks! 🎣",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 305,
-                        question: "What's the cloud's favorite weather?",
-                        answer: "Serverless rain! ☁️",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 306,
-                        question: "Why did the developer quit using Vim?",
-                        answer: "They still couldn't exit! 🚪",
-                        category: "general",
-                        likes: 0
-                    },
-                    {
-                        id: 307,
-                        question: "What's a Redux store's favorite game?",
-                        answer: "State of Decay! 🎮",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 308,
-                        question: "Why do DevOps engineers make great DJs?",
-                        answer: "They know how to orchestrate! 🎧",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 309,
-                        question: "What's npm's least favorite game?",
-                        answer: "Dependency hell! 🔥",
-                        category: "javascript",
-                        likes: 0
-                    },
-                    {
-                        id: 310,
-                        question: "Why did the developer love dark mode?",
-                        answer: "It attracted fewer bugs at night! 🌙",
-                        category: "design",
-                        likes: 0
-                    },
-                    {
-                        id: 311,
-                        question: "What's Git's favorite martial art?",
-                        answer: "Branch-fu! 🥋",
-                        category: "general",
-                        likes: 0
-                    },
-                    {
-                        id: 312,
-                        question: "Why do Svelte developers run so fast?",
-                        answer: "No virtual DOM to carry! 🏃",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 313,
-                        question: "What's a Lambda function's favorite dance?",
-                        answer: "The serverless shuffle! 💃",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 314,
-                        question: "Why did the developer bring a ladder to standup?",
-                        answer: "To reach the higher-level architecture! 🪜",
-                        category: "startup",
-                        likes: 0
-                    },
-                    {
-                        id: 315,
-                        question: "What's Terraform's favorite TV show?",
-                        answer: "Infrastructure as Code Name! 📺",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 316,
-                        question: "Why do Angular developers never get dizzy?",
-                        answer: "They're used to the learning curve! 🎢",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 317,
-                        question: "What's a WebSocket's favorite sport?",
-                        answer: "Full-duplex diving! 🤿",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 318,
-                        question: "Why did the AI model go on a diet?",
-                        answer: "Too many parameters! 🤖",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 319,
-                        question: "What's Figma's favorite dessert?",
-                        answer: "Layer cake! 🎂",
-                        category: "design",
-                        likes: 0
-                    },
-                    {
-                        id: 320,
-                        question: "Why do Kubernetes pods never feel lonely?",
-                        answer: "They're always in a cluster! 🤗",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 321,
-                        question: "What's a code reviewer's favorite movie?",
-                        answer: "The Fault in Our Stars! ⭐",
-                        category: "general",
-                        likes: 0
-                    },
-                    {
-                        id: 322,
-                        question: "Why did the developer love Astro?",
-                        answer: "Zero JavaScript felt out of this world! 🚀",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 323,
-                        question: "What's SSH's favorite game?",
-                        answer: "Hide and secure seek! 🔒",
-                        category: "security",
-                        likes: 0
-                    },
-                    {
-                        id: 324,
-                        question: "Why do Deno developers feel superior?",
-                        answer: "They're TypeScript native! 🦕",
-                        category: "javascript",
-                        likes: 0
-                    },
-                    {
-                        id: 325,
-                        question: "What's a REST API's favorite exercise?",
-                        answer: "GET requests! 💪",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 326,
-                        question: "Why did the developer switch to Bun?",
-                        answer: "Node was getting too slow! 🍞",
-                        category: "javascript",
-                        likes: 0
-                    },
-                    {
-                        id: 327,
-                        question: "What's Vercel's favorite time of day?",
-                        answer: "Deploy o'clock! 🕐",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 328,
-                        question: "Why do Remix developers love music?",
-                        answer: "They're all about that nested routing! 🎵",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 329,
-                        question: "What's tRPC's favorite magic trick?",
-                        answer: "Type-safe telepathy! 🎩",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 330,
-                        question: "Why did the developer cry at the hackathon?",
-                        answer: "Their API rate limit hit! 😢",
-                        category: "startup",
-                        likes: 0
-                    },
-                    {
-                        id: 331,
-                        question: "What's Prisma's favorite hobby?",
-                        answer: "Schema crafting! ⚒️",
-                        category: "database",
-                        likes: 0
-                    },
-                    {
-                        id: 332,
-                        question: "Why do Solid.js developers smile?",
-                        answer: "Fine-grained reactivity feels so good! 😊",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 333,
-                        question: "What's Supabase's favorite superhero?",
-                        answer: "The Backend-end! 🦸",
-                        category: "database",
-                        likes: 0
-                    },
-                    {
-                        id: 334,
-                        question: "Why did the prompt engineer fail art class?",
-                        answer: "Too many tokens, not enough canvas! 🎨",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 335,
-                        question: "What's GitHub Actions' favorite movie?",
-                        answer: "Workflow of Wall Street! 🎬",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 336,
-                        question: "Why do Qwik developers load so fast?",
-                        answer: "They only resume, never rehydrate! ⚡",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 337,
-                        question: "What's Zod's favorite validation?",
-                        answer: "All of them! ✅",
-                        category: "javascript",
-                        likes: 0
-                    },
-                    {
-                        id: 338,
-                        question: "Why did the developer love Turbo?",
-                        answer: "It monorepo'd their heart! 💝",
-                        category: "javascript",
-                        likes: 0
-                    },
-                    {
-                        id: 339,
-                        question: "What's Vitest's favorite snack?",
-                        answer: "Fast food! 🍔",
-                        category: "testing",
-                        likes: 0
-                    },
-                    {
-                        id: 340,
-                        question: "Why do Playwright developers sleep well?",
-                        answer: "Their tests run in parallel! 😴",
-                        category: "testing",
-                        likes: 0
-                    },
-                    {
-                        id: 341,
-                        question: "What's Cloudflare Workers' favorite job?",
-                        answer: "Edge computing! 🌐",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 342,
-                        question: "Why did the developer switch to pnpm?",
-                        answer: "Disk space was no joke! 💾",
-                        category: "javascript",
-                        likes: 0
-                    },
-                    {
-                        id: 343,
-                        question: "What's Stripe's favorite card game?",
-                        answer: "Payment poker! 💳",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 344,
-                        question: "Why do Vite developers start so quickly?",
-                        answer: "ESM native baby! 🏃‍♂️",
-                        category: "javascript",
-                        likes: 0
-                    },
-                    {
-                        id: 345,
-                        question: "What's Midjourney's favorite artist?",
-                        answer: "Vincent van Generator! 🖼️",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 346,
-                        question: "Why did the LLM apologize?",
-                        answer: "As an AI language model, it had to! 🤖",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 347,
-                        question: "What's htmx's favorite dance?",
-                        answer: "The Ajax shuffle! 🕺",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 348,
-                        question: "Why do Tauri developers feel light?",
-                        answer: "No Electron bloat! 🪶",
-                        category: "general",
-                        likes: 0
-                    },
-                    {
-                        id: 349,
-                        question: "What's Copilot's favorite karaoke song?",
-                        answer: "I Will Always Autocomplete You! 🎤",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 350,
-                        question: "Why did the developer love shadcn/ui?",
-                        answer: "Copy-paste never felt so good! 📋",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 351,
-                        question: "What's Cursor's favorite key?",
-                        answer: "Tab (for AI completion)! ⌨️",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 352,
-                        question: "Why do Wasm developers feel powerful?",
-                        answer: "Near-native speed in the browser! 💪",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 353,
-                        question: "What's Drizzle ORM's favorite weather?",
-                        answer: "SQL showers! 🌧️",
-                        category: "database",
-                        likes: 0
-                    },
-                    {
-                        id: 354,
-                        question: "Why did the developer love Hono?",
-                        answer: "It's ultra-fast on the edge! ⚡",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 355,
-                        question: "What's Shopify Hydrogen's favorite element?",
-                        answer: "Element H for Headless! 🛒",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 356,
-                        question: "Why do Fresh developers feel so cool?",
-                        answer: "Islands architecture! 🏝️",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 357,
-                        question: "What's Storybook's favorite genre?",
-                        answer: "Component fiction! 📚",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 358,
-                        question: "Why did the developer switch to Biome?",
-                        answer: "ESLint + Prettier = too slow! 🐢",
-                        category: "javascript",
-                        likes: 0
-                    },
-                    {
-                        id: 359,
-                        question: "What's Clerk's favorite accessory?",
-                        answer: "Auth-entic jewelry! 💍",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 360,
-                        question: "Why do tRPC developers trust each other?",
-                        answer: "End-to-end type safety! 🤝",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 361,
-                        question: "What's LangChain's favorite breakfast?",
-                        answer: "Prompt and eggs! 🍳",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 362,
-                        question: "Why did the AI refuse to code?",
-                        answer: "Copyright concerns! ⚖️",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 363,
-                        question: "What's Sanity's favorite meditation?",
-                        answer: "Structured content Om! 🧘",
-                        category: "database",
-                        likes: 0
-                    },
-                    {
-                        id: 364,
-                        question: "Why do Nuxt developers love climbing?",
-                        answer: "They're always scaling! 🧗",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 365,
-                        question: "What's Linear's favorite shape?",
-                        answer: "Issue triangle! 📐",
-                        category: "startup",
-                        likes: 0
-                    },
-                    {
-                        id: 366,
-                        question: "Why did the developer cry over Notion?",
-                        answer: "Database relations got too emotional! 😭",
-                        category: "startup",
-                        likes: 0
-                    },
-                    {
-                        id: 367,
-                        question: "What's PostHog's favorite animal?",
-                        answer: "Analytics hedgehog! 🦔",
-                        category: "startup",
-                        likes: 0
-                    },
-                    {
-                        id: 368,
-                        question: "Why do Raycast developers work so fast?",
-                        answer: "Command bar everything! ⚡",
-                        category: "general",
-                        likes: 0
-                    },
-                    {
-                        id: 369,
-                        question: "What's Cal.com's favorite appointment?",
-                        answer: "Open source scheduling! 📅",
-                        category: "startup",
-                        likes: 0
-                    },
-                    {
-                        id: 370,
-                        question: "Why did the developer love Convex?",
-                        answer: "Real-time without the pain! ⚡",
-                        category: "database",
-                        likes: 0
-                    },
-                    {
-                        id: 371,
-                        question: "What's Resend's favorite email?",
-                        answer: "The one that actually sends! 📧",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 372,
-                        question: "Why do Payload CMS developers smile?",
-                        answer: "TypeScript-first bliss! 😊",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 373,
-                        question: "What's Upstash's favorite direction?",
-                        answer: "Up and to the right! 📈",
-                        category: "database",
-                        likes: 0
-                    },
-                    {
-                        id: 374,
-                        question: "Why did the developer switch to Railway?",
-                        answer: "Deployment on rails! 🚂",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 375,
-                        question: "What's PlanetScale's favorite planet?",
-                        answer: "MySQL-turn! 🪐",
-                        category: "database",
-                        likes: 0
-                    },
-                    {
-                        id: 376,
-                        question: "Why do Fly.io developers feel free?",
-                        answer: "Global distribution! 🦋",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 377,
-                        question: "What's Neon's favorite light?",
-                        answer: "Serverless Postgres glow! 💡",
-                        category: "database",
-                        likes: 0
-                    },
-                    {
-                        id: 378,
-                        question: "Why did the developer love Mintlify?",
-                        answer: "Docs that don't suck! 📖",
-                        category: "general",
-                        likes: 0
-                    },
-                    {
-                        id: 379,
-                        question: "What's Replicate's favorite animal?",
-                        answer: "AI models of course! 🤖",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 380,
-                        question: "Why do Xata developers party?",
-                        answer: "Serverless database + search! 🎉",
-                        category: "database",
-                        likes: 0
-                    },
-                    {
-                        id: 381,
-                        question: "What's Together AI's favorite social event?",
-                        answer: "Model mixer! 🎊",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 382,
-                        question: "Why did the developer switch to Turso?",
-                        answer: "SQLite at the edge! 🌍",
-                        category: "database",
-                        likes: 0
-                    },
-                    {
-                        id: 383,
-                        question: "What's Sentry's favorite guard?",
-                        answer: "Error boundary! 🛡️",
-                        category: "general",
-                        likes: 0
-                    },
-                    {
-                        id: 384,
-                        question: "Why do developers love Excalidraw?",
-                        answer: "Hand-drawn architecture is art! 🎨",
-                        category: "design",
-                        likes: 0
-                    },
-                    {
-                        id: 385,
-                        question: "What's Replit's favorite action?",
-                        answer: "Code, deploy, repeat! 🔄",
-                        category: "general",
-                        likes: 0
-                    },
-                    {
-                        id: 386,
-                        question: "Why did the developer cry over Anthropic?",
-                        answer: "Claude's so helpful! 😭",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 387,
-                        question: "What's Lemon Squeezy's favorite drink?",
-                        answer: "Payment-ade! 🍋",
-                        category: "startup",
-                        likes: 0
-                    },
-                    {
-                        id: 388,
-                        question: "Why do Val Town developers feel magical?",
-                        answer: "Val-ues come to life! ✨",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 389,
-                        question: "What's Trigger.dev's favorite weapon?",
-                        answer: "Background jobs! 🎯",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 390,
-                        question: "Why did the developer love Inngest?",
-                        answer: "Event-driven dreams! 💭",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 391,
-                        question: "What's Partykit's favorite celebration?",
-                        answer: "Real-time ragers! 🎈",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 392,
-                        question: "Why do Motion developers move fast?",
-                        answer: "Framer Motion magic! 🏃",
-                        category: "web",
-                        likes: 0
-                    },
-                    {
-                        id: 393,
-                        question: "What's Pinecone's favorite tree?",
-                        answer: "Vector pine! 🌲",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 394,
-                        question: "Why did the developer switch to Weaviate?",
-                        answer: "Vector search woven in! 🕸️",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 395,
-                        question: "What's Qdrant's favorite number?",
-                        answer: "Vector dimensions! 🔢",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 396,
-                        question: "Why do OpenAI developers dream big?",
-                        answer: "GPT-∞ someday! 🌟",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 397,
-                        question: "What's Hugging Face's favorite emoji?",
-                        answer: "🤗 obviously!",
-                        category: "ai",
-                        likes: 0
-                    },
-                    {
-                        id: 398,
-                        question: "Why did the developer love Axiom?",
-                        answer: "Logs without limits! 📊",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 399,
-                        question: "What's Better Stack's favorite position?",
-                        answer: "On top! 📈",
-                        category: "devops",
-                        likes: 0
-                    },
-                    {
-                        id: 400,
-                        question: "Why do developers love daily standups?",
-                        answer: "Just kidding, nobody does! 🙃",
-                        category: "startup",
-                        likes: 0
-                    },
-                    {
-                        id: 401,
-                        question: "What's WFH's worst enemy?",
-                        answer: "Pants! 👖",
-                        category: "startup",
-                        likes: 0
                     }
                 ];
                 this.renderJokes();
@@ -2847,84 +1993,11 @@ const jokesManager = {
             return;
         }
         
-        // Apply filters
-        const filteredJokes = this.getFilteredJokes();
-        
         const startIndex = (this.currentPage - 1) * this.jokesPerPage;
         const endIndex = startIndex + this.jokesPerPage;
-        const currentJokes = filteredJokes.slice(startIndex, endIndex);
+        const currentJokes = this.jokes.slice(startIndex, endIndex);
         
         container.innerHTML = currentJokes.map(joke => this.createJokeElement(joke)).join('');
-        
-        // Update pagination with filtered count
-        this.updatePagination(filteredJokes.length);
-    },
-    
-    getFilteredJokes() {
-        let filtered = [...this.jokes];
-        
-        // Apply category filter
-        if (this.currentFilter !== 'all') {
-            filtered = filtered.filter(joke => joke.category === this.currentFilter);
-        }
-        
-        // Apply search filter
-        if (this.currentSearch) {
-            const query = this.currentSearch.toLowerCase().trim();
-            filtered = filtered.filter(joke => 
-                joke.question.toLowerCase().includes(query) ||
-                joke.answer.toLowerCase().includes(query) ||
-                joke.category.toLowerCase().includes(query)
-            );
-        }
-        
-        // Apply sorting
-        filtered = this.sortJokes(filtered);
-        
-        return filtered;
-    },
-    
-    sortJokes(jokes) {
-        switch(this.sortBy) {
-            case 'popular':
-                return jokes.sort((a, b) => b.likes - a.likes);
-            case 'category':
-                return jokes.sort((a, b) => a.category.localeCompare(b.category));
-            case 'newest':
-            default:
-                return jokes.sort((a, b) => b.id - a.id);
-        }
-    },
-    
-    applyFilters() {
-        this.currentPage = 1; // Reset to first page when filters change
-        this.renderJokes();
-        this.updateStatusMessage();
-    },
-    
-    updateStatusMessage() {
-        const filtered = this.getFilteredJokes();
-        const total = this.jokes.length;
-        
-        let message = '';
-        if (this.currentSearch) {
-            message += `Searching for "${this.currentSearch}" `;
-        }
-        if (this.currentFilter !== 'all') {
-            message += `in ${this.currentFilter} `;
-        }
-        if (filtered.length !== total) {
-            message += `(${filtered.length} of ${total} jokes)`;
-        }
-        
-        // Update any status display elements
-        const statusElement = document.querySelector('.filter-status');
-        if (statusElement && message) {
-            statusElement.textContent = message;
-            statusElement.style.display = 'block';
-        } else if (statusElement) {
-            statusElement.style.display = 'none';
-        }
     },
     
     renderFeaturedJokes() {
@@ -2946,7 +2019,6 @@ const jokesManager = {
     },
     
     createJokeElement(joke, isFeatured = false) {
-        const isLiked = this.likedJokes.has(joke.id);
         const element = `
             <div class="joke ${isFeatured ? 'featured-joke' : ''} animate__animated animate__fadeIn" 
                  data-category="${joke.category}" 
@@ -2960,18 +2032,13 @@ const jokesManager = {
                     <button class="reveal-button" 
                             aria-label="Reveal punchline"
                             aria-controls="joke-${joke.id}-punchline">
-                        <i class="fas fa-eye"></i> <span>Reveal</span>
+                        <i class="fas fa-eye"></i> Reveal
                     </button>
                     <div class="action-buttons">
-                        <div class="reactions-container">
-                            <button class="action-button like-button ${isLiked ? 'liked' : ''}" 
-                                    aria-label="Like joke"
-                                    aria-pressed="${isLiked}"
-                                    style="display: none;">
-                                <i class="fas fa-heart"></i> <span class="like-count">${joke.likes}</span>
-                            </button>
-                            ${this.renderReactions(joke)}
-                        </div>
+                        <button class="action-button like-button ${joke.likes > 0 ? 'liked' : ''}" 
+                                aria-label="Like joke">
+                            <i class="fas fa-heart"></i> <span class="like-count">${joke.likes}</span>
+                        </button>
                         <button class="action-button share-button" 
                                 aria-label="Share joke">
                             <i class="fas fa-share"></i>
@@ -2997,8 +2064,6 @@ const jokesManager = {
                 this.togglePunchline(joke);
             } else if (e.target.closest('.like-button')) {
                 this.toggleLike(joke);
-            } else if (e.target.closest('.reaction-button')) {
-                this.handleReaction(joke, e.target.closest('.reaction-button'));
             } else if (e.target.closest('.share-button')) {
                 this.shareJoke(joke);
             } else if (e.target.closest('.copy-button')) {
@@ -3051,13 +2116,6 @@ const jokesManager = {
             punchline.setAttribute('aria-expanded', 'true');
             punchline.classList.add('animate__animated', 'animate__fadeIn');
             this.announceToScreenReader('Punchline revealed');
-            
-            // Track joke view for stats
-            const jokeId = parseInt(joke.dataset.id, 10);
-            const category = joke.dataset.category;
-            if (window.statsManager) {
-                window.statsManager.trackJokeView(jokeId, category);
-            }
         } else {
             icon.className = 'fas fa-eye';
             revealButton.querySelector('span').textContent = 'Reveal';
@@ -3066,68 +2124,8 @@ const jokesManager = {
         }
     },
     
-    renderReactions(joke) {
-        const reactionTypes = ['\ud83d\ude02', '\ud83e\udd13', '\ud83d\udc80', '\ud83d\udd25', '\ud83e\udd14'];
-        const jokeReactions = this.reactions[joke.id] || {};
-        
-        return `
-            <div class="reaction-picker">
-                ${reactionTypes.map(emoji => {
-                    const isActive = jokeReactions[emoji] || false;
-                    return `
-                        <button class="reaction-button ${isActive ? 'active' : ''}" 
-                                data-emoji="${emoji}"
-                                aria-label="React with ${emoji}">
-                            <span class="reaction-emoji">${emoji}</span>
-                        </button>
-                    `;
-                }).join('')}
-            </div>
-        `;
-    },
-    
-    handleReaction(joke, button) {
-        const jokeId = parseInt(joke.dataset.id, 10);
-        const emoji = button.dataset.emoji;
-        
-        if (!this.reactions[jokeId]) {
-            this.reactions[jokeId] = {};
-        }
-        
-        // Toggle the reaction
-        this.reactions[jokeId][emoji] = !this.reactions[jokeId][emoji];
-        
-        // Animate the button
-        button.classList.toggle('active');
-        button.classList.add('animate__animated', 'animate__bounce');
-        setTimeout(() => {
-            button.classList.remove('animate__animated', 'animate__bounce');
-        }, 600);
-        
-        // Track reaction for stats
-        if (this.reactions[jokeId][emoji] && window.statsManager) {
-            window.statsManager.trackReaction();
-        }
-        
-        // Save to localStorage
-        this.saveReactions();
-        
-        // Update joke object likes count based on all reactions
-        const jokeObj = this.jokes.find(j => j.id === jokeId);
-        if (jokeObj) {
-            const activeReactions = Object.values(this.reactions[jokeId] || {}).filter(Boolean).length;
-            jokeObj.likes = activeReactions;
-            
-            // Update like count if legacy like button exists
-            const likeCount = joke.querySelector('.like-count');
-            if (likeCount) {
-                likeCount.textContent = jokeObj.likes;
-            }
-        }
-    },
-    
     toggleLike(joke) {
-        const jokeId = parseInt(joke.dataset.id, 10);
+        const jokeId = parseInt(joke.dataset.id);
         const jokeObj = this.jokes.find(j => j.id === jokeId);
         if (!jokeObj) return;
 
@@ -3136,24 +2134,14 @@ const jokesManager = {
         const isLiked = likeButton.classList.toggle('liked');
         
         if (isLiked) {
-            this.likedJokes.add(jokeId);
-            jokeObj.likes += 1;
             likeButton.classList.add('animate__animated', 'animate__heartBeat');
             setTimeout(() => {
                 likeButton.classList.remove('animate__animated', 'animate__heartBeat');
             }, 1000);
-        } else {
-            this.likedJokes.delete(jokeId);
-            jokeObj.likes = Math.max(0, jokeObj.likes - 1);
         }
         
+        jokeObj.likes += isLiked ? 1 : -1;
         likeCount.textContent = jokeObj.likes;
-        this.saveLikedJokes();
-        
-        // If sorted by popular, re-render
-        if (this.sortBy === 'popular') {
-            this.renderJokes();
-        }
     },
     
     shareJoke(joke) {
@@ -3318,48 +2306,13 @@ const jokesManager = {
         this.updatePagination();
     },
     
-    setupSortControls() {
-        // Create sort controls if they don't exist
-        const header = document.querySelector('header');
-        if (!header) return;
-        
-        let sortContainer = document.querySelector('.sort-container');
-        if (!sortContainer) {
-            sortContainer = document.createElement('div');
-            sortContainer.className = 'sort-container';
-            sortContainer.innerHTML = `
-                <label for="sortSelect" class="sort-label">Sort by:</label>
-                <select id="sortSelect" class="sort-select" aria-label="Sort jokes">
-                    <option value="newest">Newest</option>
-                    <option value="popular">Most Popular</option>
-                    <option value="category">Category</option>
-                </select>
-            `;
-            
-            const controls = header.querySelector('.controls');
-            if (controls) {
-                controls.appendChild(sortContainer);
-            }
-        }
-        
-        const sortSelect = document.getElementById('sortSelect');
-        if (sortSelect) {
-            sortSelect.value = this.sortBy;
-            sortSelect.addEventListener('change', (e) => {
-                this.sortBy = e.target.value;
-                this.applyFilters();
-            });
-        }
-    },
-    
-    updatePagination(totalFiltered) {
+    updatePagination() {
         const paginationContainer = document.querySelector('.pagination');
         if (!paginationContainer) return;
         
-        const jokesCount = totalFiltered !== undefined ? totalFiltered : this.jokes.length;
-        const totalPages = Math.ceil(jokesCount / this.jokesPerPage);
+        const totalPages = Math.ceil(this.jokes.length / this.jokesPerPage);
         const startIndex = (this.currentPage - 1) * this.jokesPerPage;
-        const endIndex = Math.min(startIndex + this.jokesPerPage, jokesCount);
+        const endIndex = startIndex + this.jokesPerPage;
         
         // Clear existing pagination
         paginationContainer.innerHTML = '';
@@ -3369,11 +2322,11 @@ const jokesManager = {
         prevButton.className = 'pagination-button';
         prevButton.innerHTML = '&laquo;';
         prevButton.disabled = this.currentPage === 1;
-        prevButton.setAttribute('aria-label', 'Previous page');
         prevButton.addEventListener('click', () => {
             if (this.currentPage > 1) {
                 this.currentPage--;
                 this.renderJokes();
+                this.updatePagination();
             }
         });
         paginationContainer.appendChild(prevButton);
@@ -3434,11 +2387,11 @@ const jokesManager = {
         nextButton.className = 'pagination-button';
         nextButton.innerHTML = '&raquo;';
         nextButton.disabled = this.currentPage === totalPages;
-        nextButton.setAttribute('aria-label', 'Next page');
         nextButton.addEventListener('click', () => {
             if (this.currentPage < totalPages) {
                 this.currentPage++;
                 this.renderJokes();
+                this.updatePagination();
             }
         });
         paginationContainer.appendChild(nextButton);
@@ -3446,9 +2399,10 @@ const jokesManager = {
         // Add page info
         const pageInfo = document.createElement('span');
         pageInfo.className = 'pagination-info';
-        const start = jokesCount > 0 ? startIndex + 1 : 0;
-        const end = endIndex;
-        pageInfo.textContent = `Showing ${start}-${end} of ${jokesCount} jokes`;
+        const totalJokes = this.jokes.length;
+        const start = totalJokes > 0 ? startIndex + 1 : 0;
+        const end = Math.min(endIndex, totalJokes);
+        pageInfo.textContent = `Showing ${start}-${end} of ${totalJokes} jokes`;
         paginationContainer.appendChild(pageInfo);
     },
     

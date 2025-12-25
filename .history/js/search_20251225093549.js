@@ -1,4 +1,3 @@
-/* eslint-env browser */
 // Search functionality
 const searchManager = {
     debounceTimer: null,

@@ -3053,7 +3053,7 @@ const jokesManager = {
             this.announceToScreenReader('Punchline revealed');
             
             // Track joke view for stats
-            const jokeId = parseInt(joke.dataset.id, 10);
+            const jokeId = parseInt(joke.dataset.id);
             const category = joke.dataset.category;
             if (window.statsManager) {
                 window.statsManager.trackJokeView(jokeId, category);
@@ -3087,7 +3087,7 @@ const jokesManager = {
     },
     
     handleReaction(joke, button) {
-        const jokeId = parseInt(joke.dataset.id, 10);
+        const jokeId = parseInt(joke.dataset.id);
         const emoji = button.dataset.emoji;
         
         if (!this.reactions[jokeId]) {
@@ -3127,7 +3127,7 @@ const jokesManager = {
     },
     
     toggleLike(joke) {
-        const jokeId = parseInt(joke.dataset.id, 10);
+        const jokeId = parseInt(joke.dataset.id);
         const jokeObj = this.jokes.find(j => j.id === jokeId);
         if (!jokeObj) return;
 

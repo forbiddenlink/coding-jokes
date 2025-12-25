@@ -446,51 +446,24 @@ header {
 
 .joke {
     background: rgba(255, 255, 255, 0.95);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 1.5rem;
     padding: 1.5rem;
     padding-top: 3rem;
     box-shadow: var(--card-shadow);
     position: relative;
-    overflow: visible;
+    overflow: hidden;
     border: 1px solid rgba(124, 58, 237, 0.2);
     display: flex;
     flex-direction: column;
     gap: 1rem;
     transform-origin: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-style: preserve-3d;
-    perspective: 1000px;
-}
-
-.joke::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(135deg, 
-        rgba(99, 102, 241, 0.1), 
-        rgba(168, 85, 247, 0.1), 
-        rgba(236, 72, 153, 0.1));
-    border-radius: 1.5rem;
-    opacity: 0;
-    transition: opacity 0.3s;
-    z-index: -1;
-}
-
-.joke:hover::before {
-    opacity: 1;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 .joke:hover {
-    transform: translateY(-8px) rotateX(2deg) scale(1.02);
-    box-shadow: 
-        0 20px 40px rgba(124, 58, 237, 0.2),
-        0 10px 20px rgba(0, 0, 0, 0.1),
-        0 0 60px rgba(99, 102, 241, 0.15);
+    transform: translateY(-4px);
+    box-shadow: var(--card-hover-shadow);
 }
 
 .joke.highlighted {
@@ -542,16 +515,9 @@ header {
     line-height: 1.2;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     z-index: 1;
-    transform: rotate(-2deg);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.category-badge:hover {
-    transform: rotate(0deg) scale(1.05);
 }
 
 /* Category-specific badge colors */
@@ -741,46 +707,26 @@ html[data-theme="dark"] [data-category="general"] .category-badge {
 }
 
 .reveal-button {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 1rem;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-    transform: rotate(-0.5deg);
-    position: relative;
-    overflow: hidden;
-}
-
-.reveal-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s;
-}
-
-.reveal-button:hover::before {
-    left: 100%;
 }
 
 .reveal-button:hover {
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    transform: translateY(-3px) rotate(0deg) scale(1.05);
-    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
+    background: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 .reveal-button:active {
-    transform: translateY(-1px) scale(1.02);
+    transform: translateY(0);
 }
 
 /* Improved focus styles for all interactive elements */
@@ -920,7 +866,6 @@ html[data-theme="dark"] .random-joke:hover {
 
 .featured-joke {
     background: rgba(255, 255, 255, 0.98);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 2px solid var(--primary-color);
     box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.2);
@@ -1878,176 +1823,6 @@ html[data-theme="dark"] .pagination-button.active {
     animation-duration: 0.3s !important;
 }
 
-/* Stats Dashboard */
-.stats-dashboard.hidden {
-    display: none;
-}
-
-.stats-button {
-    padding: 0.65rem 1.1rem;
-    border-radius: 0.75rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background: linear-gradient(135deg, #f59e0b, #ef4444);
-    color: white;
-    border: none;
-    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
-}
-
-.stats-button:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
-}
-
-.stats-dashboard.hidden {
-    display: none;
-}
-
-.stats-dashboard {
-    background: rgba(255, 255, 255, 0.98);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    border-radius: 1.5rem;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    border: 2px solid rgba(99, 102, 241, 0.2);
-    animation: slideInUp 0.5s ease-out;
-}
-
-.stats-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-.stats-header h2 {
-    font-size: 1.75rem;
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.close-stats {
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    border: none;
-    background: rgba(239, 68, 68, 0.1);
-    color: #ef4444;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-size: 1.25rem;
-}
-
-.close-stats:hover {
-    background: #ef4444;
-    color: white;
-    transform: rotate(90deg);
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.stat-card {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
-    padding: 1.5rem;
-    border-radius: 1rem;
-    text-align: center;
-    border: 2px solid rgba(99, 102, 241, 0.2);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.stat-card:hover {
-    transform: translateY(-4px) rotate(-1deg);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
-}
-
-.stat-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.stat-value {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.25rem;
-}
-
-.stat-label {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.achievements-section {
-    margin-top: 2rem;
-}
-
-.achievements-section h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
-}
-
-.achievement {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 1rem;
-    border-radius: 1rem;
-    text-align: center;
-    border: 2px solid transparent;
-    transition: all 0.3s;
-}
-
-.achievement.unlocked {
-    border-color: #10b981;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
-}
-
-.achievement.locked {
-    opacity: 0.4;
-    filter: grayscale(1);
-}
-
-.achievement:hover {
-    transform: scale(1.05);
-}
-
-.achievement-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.achievement-name {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 0.25rem;
-}
-
-.achievement-desc {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
-
 /* Responsive refinements */
 @media (max-width: 768px) {
     .joke, .featured-joke {
@@ -2061,60 +1836,6 @@ html[data-theme="dark"] .pagination-button.active {
     
     .action-button:hover {
         transform: none;
-    }
-    
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .achievements-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Achievement Notification */
-.achievement-notification {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: white;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 40px rgba(16, 185, 129, 0.4);
-    z-index: 10000;
-    max-width: 350px;
-}
-
-.achievement-notification-content {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.achievement-notification-icon {
-    font-size: 3rem;
-}
-
-.achievement-notification-title {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    opacity: 0.9;
-    margin-bottom: 0.25rem;
-}
-
-.achievement-notification-name {
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
-@media (max-width: 768px) {
-    .achievement-notification {
-        top: 1rem;
-        right: 1rem;
-        left: 1rem;
-        max-width: none;
     }
 }
 
