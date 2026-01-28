@@ -2854,7 +2854,7 @@ const jokesManager = {
         const endIndex = startIndex + this.jokesPerPage;
         const currentJokes = filteredJokes.slice(startIndex, endIndex);
         
-        container.innerHTML = currentJokes.map(joke => this.createJokeElement(joke)).join('');
+        container.innerHTML = currentJokes.map((joke, index) => this.createJokeElement(joke, false, index)).join('');
         
         // Update pagination with filtered count
         this.updatePagination(filteredJokes.length);
@@ -2942,13 +2942,14 @@ const jokesManager = {
             return;
         }
         
-        container.innerHTML = this.featuredJokes.map(joke => this.createJokeElement(joke, true)).join('');
+        container.innerHTML = this.featuredJokes.map((joke, index) => this.createJokeElement(joke, true, index)).join('');
     },
     
-    createJokeElement(joke, isFeatured = false) {
+    createJokeElement(joke, isFeatured = false, index = 0) {
         const isLiked = this.likedJokes.has(joke.id);
         const element = `
             <div class="joke ${isFeatured ? 'featured-joke' : ''} animate__animated animate__fadeIn" 
+                 style="--delay: ${index * 0.1}s"
                  data-category="${joke.category}" 
                  data-id="${joke.id}"
                  role="article"
