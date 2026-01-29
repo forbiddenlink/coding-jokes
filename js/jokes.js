@@ -1,6 +1,6 @@
 /* eslint-env browser */
 // Joke management
-const jokesManager = {
+const jokesManager = window.jokesManager = {
     jokes: [],
     currentJoke: null,
     featuredJokes: [],

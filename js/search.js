@@ -1,6 +1,6 @@
 /* eslint-env browser */
 // Search functionality
-const searchManager = {
+const searchManager = window.searchManager = {
     debounceTimer: null,
     debounceDelay: 300,
     currentQuery: '',

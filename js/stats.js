@@ -1,6 +1,6 @@
 /* eslint-env browser */
 // Stats and Achievements Manager
-const statsManager = {
+const statsManager = window.statsManager = {
     stats: {
         jokesViewed: new Set(),
         totalReactions: 0,

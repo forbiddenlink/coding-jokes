@@ -1,6 +1,6 @@
 /* eslint-env browser */
 // Filter functionality
-const filterManager = {
+const filterManager = window.filterManager = {
     currentCategory: 'all',
     
     init() {

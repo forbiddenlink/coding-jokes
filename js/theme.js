@@ -2,7 +2,7 @@
 // Theme management
 console.log('Theme script loaded');
 
-const theme = {
+const theme = window.theme = {
     current: localStorage.getItem('theme') || 'light',
     
     init() {
