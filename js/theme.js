@@ -3,7 +3,7 @@
 console.log('Theme script loaded');
 
 const theme = window.theme = {
-    current: localStorage.getItem('theme') || 'light',
+    current: localStorage.getItem('theme') || 'dark',
     
     init() {
         // Set initial theme immediately to prevent flash
@@ -30,10 +30,10 @@ const theme = window.theme = {
             
             if (this.current === 'dark') {
                 icon.className = 'fas fa-sun';
-                text.textContent = 'Toggle Light Mode';
+                text.textContent = 'Light Mode';
             } else {
                 icon.className = 'fas fa-moon';
-                text.textContent = 'Toggle Dark Mode';
+                text.textContent = 'Dark Mode';
             }
         }
     },

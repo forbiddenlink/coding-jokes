@@ -2991,7 +2991,7 @@ const jokesManager = window.jokesManager = {
     addEventListeners() {
         // Event delegation for joke interactions
         document.addEventListener('click', (e) => {
-            const joke = e.target.closest('.joke');
+            const joke = e.target.closest('.joke, .featured-joke');
             if (!joke) return;
             
             if (e.target.closest('.reveal-button')) {
@@ -3012,8 +3012,8 @@ const jokesManager = window.jokesManager = {
             if (e.key === 'Escape') {
                 // Close any open punchlines
                 document.querySelectorAll('.punchline.visible').forEach(punchline => {
-                    const joke = punchline.closest('.joke');
-                    this.togglePunchline(joke);
+                    const joke = punchline.closest('.joke, .featured-joke');
+                    if (joke) this.togglePunchline(joke);
                 });
             }
         });

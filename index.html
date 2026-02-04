@@ -12,20 +12,19 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Coding Jokes - Programming Humor">
         <meta name="twitter:description" content="Laugh with fellow developers! Browse our collection of programming jokes.">
-        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%237c3aed'/><stop offset='100%25' style='stop-color:%235b21b6'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23grad)'/><text x='50' y='65' font-size='50' text-anchor='middle' fill='white' font-family='Arial, sans-serif'>😂</text></svg>">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><rect x='8' y='8' width='84' height='84' rx='8' fill='%23161b22' stroke='%2300ff41' stroke-width='2'/><text x='50' y='62' font-size='42' text-anchor='middle' font-family='monospace' fill='%2300ff41'>&gt;_</text><rect x='60' y='48' width='3' height='18' fill='%2300ff41'><animate attributeName='opacity' values='1;0;1' dur='1s' repeatCount='indefinite'/></rect></svg>">
         <title>Coding Jokes - Programming Humor for Developers</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Recursive:wght@400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     </head>
     <body>
         <a href="#main-content" class="skip-link">Skip to main content</a>
         <div class="container">
             <header>
-                <h1>&lt; Coding Jokes &gt;</h1>
+                <h1><span class="terminal-prompt">~/humor $</span> Coding<span class="cursor-blink">_</span>Jokes</h1>
                 <div class="controls">
                     <button type="button" class="theme-toggle" aria-label="Toggle theme" id="themeToggle">
                         <i class="fas fa-moon"></i>
@@ -104,26 +103,36 @@
                 <div class="filter-status" aria-live="polite" aria-atomic="true"></div>
                 
                 <section class="hero" aria-labelledby="hero-title">
-                    <h2 id="hero-title">Welcome to Coding Jokes</h2>
-                <p>A collection of the funniest programming jokes, curated by developers for developers. Share a laugh with your fellow coders!</p>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                            <span class="terminal-title">welcome.sh</span>
+                        </div>
+                        <div class="terminal-body">
+                            <h2 id="hero-title"><span class="terminal-output">$</span> echo "Welcome to Coding Jokes"</h2>
+                            <p class="typewriter-text">A collection of the funniest programming jokes, curated by developers for developers. <span class="text-glow">console.log("Share a laugh with your fellow coders!");</span></p>
+                        </div>
+                    </div>
             </section>
 
                 <section class="featured-section" aria-labelledby="featured-title">
-                    <h2 id="featured-title">Featured Jokes</h2>
+                    <h2 id="featured-title"><span class="section-icon">&#9733;</span> Featured<span class="code-comment"> // top picks</span></h2>
                     <div class="featured-jokes" aria-live="polite">
                         <!-- Featured jokes will be dynamically inserted here -->
                     </div>
                 </section>
 
                 <section class="jokes-section" aria-labelledby="jokes-title">
-                    <h2 id="jokes-title">All Jokes</h2>
+                    <h2 id="jokes-title"><span class="section-icon">&gt;</span> All Jokes<span class="code-comment"> // the full archive</span></h2>
                     <div class="jokes-grid" aria-live="polite" role="list">
                         <!-- Jokes will be dynamically inserted here -->
                 </div>
             </section>
             
                 <section class="submit-section" aria-labelledby="submit-title">
-                    <h2 id="submit-title">Submit Your Joke</h2>
+                    <h2 id="submit-title"><span class="section-icon">+</span> Submit Your Joke<span class="code-comment"> // push to repo</span></h2>
                     <form id="submitJokeForm" class="submit-joke" aria-label="Submit a new joke">
                     <div class="form-group">
                         <label for="jokeQuestion">Question</label>
@@ -158,8 +167,10 @@
             </main>
 
             <footer>
-
-                <p>&copy; 2025 Elizabeth Stein. All rights reserved.</p>
+                <div class="footer-terminal">
+                    <span class="terminal-output">$</span> <span class="footer-text">exit</span>
+                </div>
+                <p class="footer-copyright">&copy; 2025 Elizabeth Stein <span class="code-comment">// All rights reserved</span></p>
             </footer>
         </div>
 
