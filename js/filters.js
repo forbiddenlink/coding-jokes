@@ -2,8 +2,11 @@
 // Filter functionality
 const filterManager = window.filterManager = {
     currentCategory: 'all',
+    initialized: false,
     
     init() {
+        if (this.initialized) return;
+        this.initialized = true;
         this.addEventListeners();
     },
     

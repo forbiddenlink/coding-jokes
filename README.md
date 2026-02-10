@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-[Live Demo](#) | [Report Bug](https://github.com/forbiddenlink/coding-jokes/issues) | [Request Feature](https://github.com/forbiddenlink/coding-jokes/issues)
+[Live Demo](https://coding-jokes.vercel.app/) | [Report Bug](https://github.com/forbiddenlink/coding-jokes/issues) | [Request Feature](https://github.com/forbiddenlink/coding-jokes/issues)
 
 ## ✨ Features
 
@@ -98,6 +98,8 @@ npm run build
 # Preview production build locally
 npm run preview
 ```
+
+Production domain is configured as `https://coding-jokes.vercel.app/` in canonical and sitemap metadata.
 
 ## 📁 Project Structure
 

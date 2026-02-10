@@ -1,6 +1,7 @@
 /* eslint-env browser */
 // Joke management
 const jokesManager = window.jokesManager = {
+    initialized: false,
     jokes: [],
     currentJoke: null,
     featuredJokes: [],
@@ -11,16 +12,32 @@ const jokesManager = window.jokesManager = {
     currentFilter: 'all',
     currentSearch: '',
     sortBy: 'newest', // newest, popular, category
+    baseJokeCount: 0,
+    userJokesStorageKey: 'codingJokes.userJokes.v1',
+    analyticsStorageKey: 'codingJokes.analytics.v1',
+    analytics: {
+        reveals: 0,
+        reactions: 0,
+        searches: 0,
+        searchNoResults: 0,
+        randomJumps: 0
+    },
+    lastSearchNoResultKey: '',
     
     init() {
+        if (this.initialized) return;
+        this.initialized = true;
+
         this.loadLikedJokes();
         this.loadReactions();
+        this.loadAnalytics();
+        this.loadStateFromUrl();
         this.loadJokes();
-        this.loadFeaturedJokes();
         this.addEventListeners();
         this.setupSubmitForm();
         this.setupPagination();
         this.setupSortControls();
+        this.syncControlsFromState();
     },
     
     loadLikedJokes() {
@@ -43,6 +60,184 @@ const jokesManager = window.jokesManager = {
     
     saveReactions() {
         localStorage.setItem('jokeReactions', JSON.stringify(this.reactions));
+    },
+
+    escapeHtml(value) {
+        const text = String(value ?? '');
+        return text
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    },
+
+    getAllowedCategories() {
+        return new Set([
+            'javascript', 'python', 'java', 'general', 'web', 'testing',
+            'design', 'security', 'mobile', 'startup', 'ai', 'database',
+            'devops', 'hardware'
+        ]);
+    },
+
+    loadAnalytics() {
+        const saved = localStorage.getItem(this.analyticsStorageKey);
+        if (!saved) return;
+
+        try {
+            const parsed = JSON.parse(saved);
+            this.analytics = {
+                reveals: Number(parsed.reveals) || 0,
+                reactions: Number(parsed.reactions) || 0,
+                searches: Number(parsed.searches) || 0,
+                searchNoResults: Number(parsed.searchNoResults) || 0,
+                randomJumps: Number(parsed.randomJumps) || 0
+            };
+        } catch (error) {
+            console.error('Failed to load analytics:', error);
+        }
+    },
+
+    saveAnalytics() {
+        localStorage.setItem(this.analyticsStorageKey, JSON.stringify(this.analytics));
+    },
+
+    trackMetric(metric, increment = 1) {
+        if (!Object.hasOwn(this.analytics, metric)) return;
+        this.analytics[metric] += increment;
+        this.saveAnalytics();
+    },
+
+    trackSearch(query) {
+        if (String(query || '').trim().length === 0) return;
+        this.trackMetric('searches', 1);
+    },
+
+    getNextJokeId() {
+        return this.jokes.reduce((maxId, joke) => Math.max(maxId, Number(joke.id) || 0), 0) + 1;
+    },
+
+    loadUserJokes() {
+        const saved = localStorage.getItem(this.userJokesStorageKey);
+        if (!saved) return [];
+
+        try {
+            const parsed = JSON.parse(saved);
+            if (!parsed || parsed.version !== 1 || !Array.isArray(parsed.jokes)) {
+                return [];
+            }
+
+            const allowedCategories = this.getAllowedCategories();
+            return parsed.jokes
+                .filter((joke) => {
+                    return (
+                        joke &&
+                        Number.isInteger(joke.id) &&
+                        joke.id > 0 &&
+                        typeof joke.question === 'string' &&
+                        typeof joke.answer === 'string' &&
+                        allowedCategories.has(joke.category)
+                    );
+                })
+                .map((joke) => ({
+                    id: joke.id,
+                    question: joke.question.trim().slice(0, 500),
+                    answer: joke.answer.trim().slice(0, 500),
+                    category: joke.category,
+                    likes: 0,
+                    userSubmitted: true,
+                    createdAt: typeof joke.createdAt === 'string' ? joke.createdAt : new Date().toISOString()
+                }))
+                .filter((joke) => joke.question && joke.answer);
+        } catch (error) {
+            console.error('Failed to load user jokes:', error);
+            return [];
+        }
+    },
+
+    saveUserJokes() {
+        const jokes = this.jokes
+            .filter((joke) => joke.userSubmitted)
+            .map((joke) => ({
+                id: joke.id,
+                question: joke.question,
+                answer: joke.answer,
+                category: joke.category,
+                createdAt: joke.createdAt || new Date().toISOString()
+            }));
+
+        localStorage.setItem(
+            this.userJokesStorageKey,
+            JSON.stringify({ version: 1, jokes })
+        );
+    },
+
+    mergeUserJokes() {
+        const persistedJokes = this.loadUserJokes();
+        if (persistedJokes.length === 0) return;
+
+        const usedIds = new Set(this.jokes.map((joke) => joke.id));
+        let nextId = this.getNextJokeId();
+
+        for (const joke of persistedJokes) {
+            const mergedJoke = { ...joke };
+            if (usedIds.has(mergedJoke.id)) {
+                mergedJoke.id = nextId++;
+            }
+            usedIds.add(mergedJoke.id);
+            this.jokes.push(mergedJoke);
+        }
+    },
+
+    syncLikesFromReactions() {
+        for (const joke of this.jokes) {
+            const jokeReactions = this.reactions[joke.id] || {};
+            joke.likes = Object.values(jokeReactions).filter(Boolean).length;
+        }
+    },
+
+    loadStateFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const allowedSort = new Set(['newest', 'popular', 'category']);
+        const category = params.get('category');
+        const search = params.get('q');
+        const sort = params.get('sort');
+        const page = Number.parseInt(params.get('page') || '1', 10);
+
+        if (category && (category === 'all' || this.getAllowedCategories().has(category))) {
+            this.currentFilter = category;
+        }
+        if (typeof search === 'string') {
+            this.currentSearch = search.slice(0, 120);
+        }
+        if (sort && allowedSort.has(sort)) {
+            this.sortBy = sort;
+        }
+        if (Number.isInteger(page) && page > 0) {
+            this.currentPage = page;
+        }
+    },
+
+    syncControlsFromState() {
+        const searchInput = document.getElementById('searchInput');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const sortSelect = document.getElementById('sortSelect');
+
+        if (searchInput) searchInput.value = this.currentSearch;
+        if (categoryFilter) categoryFilter.value = this.currentFilter;
+        if (sortSelect) sortSelect.value = this.sortBy;
+    },
+
+    updateUrlState() {
+        const params = new URLSearchParams();
+        if (this.currentSearch) params.set('q', this.currentSearch);
+        if (this.currentFilter !== 'all') params.set('category', this.currentFilter);
+        if (this.sortBy !== 'newest') params.set('sort', this.sortBy);
+        if (this.currentPage > 1) params.set('page', String(this.currentPage));
+
+        const query = params.toString();
+        const nextUrl = query ? `${window.location.pathname}?${query}` : window.location.pathname;
+        window.history.replaceState(null, '', nextUrl);
     },
     
     loadJokes() {
@@ -2811,14 +3006,17 @@ const jokesManager = window.jokesManager = {
                         likes: 0
                     }
                 ];
-                this.renderJokes();
-                this.updatePagination();
+                this.baseJokeCount = this.jokes.length;
+                this.mergeUserJokes();
+                this.syncLikesFromReactions();
                 this.loadFeaturedJokes();
+                this.syncControlsFromState();
+                this.applyFilters({ preservePage: true });
             } catch (error) {
                 this.showError('Failed to load jokes. Please try again later.');
                 console.error('Error loading jokes:', error);
             }
-        }, 1000);
+        }, 0);
     },
     
     loadFeaturedJokes() {
@@ -2849,6 +3047,22 @@ const jokesManager = window.jokesManager = {
         
         // Apply filters
         const filteredJokes = this.getFilteredJokes();
+        if (filteredJokes.length === 0) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-search"></i>
+                    <h3>No Matching Jokes</h3>
+                    <p>Try adjusting search, category, or sort options.</p>
+                </div>
+            `;
+            this.updatePagination(0);
+            return;
+        }
+
+        const totalPages = Math.max(1, Math.ceil(filteredJokes.length / this.jokesPerPage));
+        if (this.currentPage > totalPages) {
+            this.currentPage = totalPages;
+        }
         
         const startIndex = (this.currentPage - 1) * this.jokesPerPage;
         const endIndex = startIndex + this.jokesPerPage;
@@ -2896,10 +3110,49 @@ const jokesManager = window.jokesManager = {
         }
     },
     
-    applyFilters() {
-        this.currentPage = 1; // Reset to first page when filters change
+    applyFilters(options = {}) {
+        if (!options.preservePage) {
+            this.currentPage = 1; // Reset to first page when filters change
+        }
+
+        const filtered = this.getFilteredJokes();
+        if (this.currentSearch && filtered.length === 0) {
+            const key = `${this.currentSearch}|${this.currentFilter}`;
+            if (this.lastSearchNoResultKey !== key) {
+                this.trackMetric('searchNoResults', 1);
+                this.lastSearchNoResultKey = key;
+            }
+        } else {
+            this.lastSearchNoResultKey = '';
+        }
+
         this.renderJokes();
+        this.updateResultsCounters(filtered.length, this.jokes.length);
         this.updateStatusMessage();
+        this.updateUrlState();
+    },
+
+    updateResultsCounters(filteredCount, totalCount) {
+        const searchCountEl = document.querySelector('.search-results-count');
+        const filterCountEl = document.querySelector('.filter-results-count');
+
+        if (searchCountEl) {
+            if (this.currentSearch) {
+                searchCountEl.textContent = `Found ${filteredCount} of ${totalCount} jokes`;
+                searchCountEl.style.display = 'block';
+            } else {
+                searchCountEl.style.display = 'none';
+            }
+        }
+
+        if (filterCountEl) {
+            if (this.currentFilter !== 'all') {
+                filterCountEl.textContent = `${filteredCount} ${this.currentFilter} jokes`;
+                filterCountEl.style.display = 'block';
+            } else {
+                filterCountEl.style.display = 'none';
+            }
+        }
     },
     
     updateStatusMessage() {
@@ -2947,20 +3200,25 @@ const jokesManager = window.jokesManager = {
     
     createJokeElement(joke, isFeatured = false, index = 0) {
         const isLiked = this.likedJokes.has(joke.id);
+        const safeId = Number.isInteger(joke.id) ? joke.id : 0;
+        const safeCategory = this.escapeHtml(joke.category);
+        const safeQuestion = this.escapeHtml(joke.question);
+        const safeAnswer = this.escapeHtml(joke.answer);
+        const safeLikes = Number.isFinite(joke.likes) ? joke.likes : 0;
         const element = `
             <div class="joke ${isFeatured ? 'featured-joke' : ''} animate__animated animate__fadeIn" 
                  style="--delay: ${index * 0.1}s"
-                 data-category="${joke.category}" 
-                 data-id="${joke.id}"
+                 data-category="${safeCategory}" 
+                 data-id="${safeId}"
                  role="article"
-                 aria-labelledby="joke-${joke.id}-question">
-                <span class="category-badge animate__animated animate__slideInRight" aria-label="Category: ${joke.category}">${joke.category}</span>
-                <div id="joke-${joke.id}-question" class="question">${joke.question}</div>
-                <div class="punchline" aria-expanded="false">${joke.answer}</div>
+                 aria-labelledby="joke-${safeId}-question">
+                <span class="category-badge animate__animated animate__slideInRight" aria-label="Category: ${safeCategory}">${safeCategory}</span>
+                <div id="joke-${safeId}-question" class="question">${safeQuestion}</div>
+                <div id="joke-${safeId}-punchline" class="punchline" aria-expanded="false">${safeAnswer}</div>
                 <div class="joke-actions">
                     <button class="reveal-button" 
                             aria-label="Reveal punchline"
-                            aria-controls="joke-${joke.id}-punchline">
+                            aria-controls="joke-${safeId}-punchline">
                         <i class="fas fa-eye"></i> <span>Reveal</span>
                     </button>
                     <div class="action-buttons">
@@ -2969,7 +3227,7 @@ const jokesManager = window.jokesManager = {
                                     aria-label="Like joke"
                                     aria-pressed="${isLiked}"
                                     style="display: none;">
-                                <i class="fas fa-heart"></i> <span class="like-count">${joke.likes}</span>
+                                <i class="fas fa-heart"></i> <span class="like-count">${safeLikes}</span>
                             </button>
                             ${this.renderReactions(joke)}
                         </div>
@@ -3052,6 +3310,7 @@ const jokesManager = window.jokesManager = {
             punchline.setAttribute('aria-expanded', 'true');
             punchline.classList.add('animate__animated', 'animate__fadeIn');
             this.announceToScreenReader('Punchline revealed');
+            this.trackMetric('reveals', 1);
             
             // Track joke view for stats
             const jokeId = parseInt(joke.dataset.id, 10);
@@ -3108,6 +3367,7 @@ const jokesManager = window.jokesManager = {
         // Track reaction for stats
         if (this.reactions[jokeId][emoji] && window.statsManager) {
             window.statsManager.trackReaction();
+            this.trackMetric('reactions', 1);
         }
         
         // Save to localStorage
@@ -3180,9 +3440,29 @@ const jokesManager = window.jokesManager = {
     },
     
     copyToClipboard(text) {
-        navigator.clipboard.writeText(text).then(() => {
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text)
+                .then(() => this.showToast('Copied to clipboard!'))
+                .catch((error) => console.error('Clipboard copy failed:', error));
+            return;
+        }
+
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.setAttribute('readonly', '');
+        textArea.style.position = 'absolute';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+
+        try {
+            document.execCommand('copy');
             this.showToast('Copied to clipboard!');
-        }).catch(console.error);
+        } catch (error) {
+            console.error('Clipboard fallback failed:', error);
+        } finally {
+            textArea.remove();
+        }
     },
     
     showToast(message) {
@@ -3205,19 +3485,27 @@ const jokesManager = window.jokesManager = {
     },
     
     showRandomJoke() {
-        if (this.jokes.length === 0) return;
-        
-        const randomIndex = Math.floor(Math.random() * this.jokes.length);
-        const joke = this.jokes[randomIndex];
-        
+        const filteredJokes = this.getFilteredJokes();
+        if (filteredJokes.length === 0) return;
+
+        const randomIndex = Math.floor(Math.random() * filteredJokes.length);
+        const joke = filteredJokes[randomIndex];
+        const absoluteIndex = filteredJokes.findIndex((item) => item.id === joke.id);
+        const targetPage = Math.floor(absoluteIndex / this.jokesPerPage) + 1;
+
+        this.currentPage = targetPage;
+        this.renderJokes();
+        this.updateUrlState();
+
         const jokeElement = document.querySelector(`.joke[data-id="${joke.id}"]`);
-        if (jokeElement) {
-            jokeElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            jokeElement.classList.add('animate__animated', 'animate__bounce');
-            setTimeout(() => {
-                jokeElement.classList.remove('animate__animated', 'animate__bounce');
-            }, 1000);
-        }
+        if (!jokeElement) return;
+
+        jokeElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        jokeElement.classList.add('animate__animated', 'animate__bounce');
+        this.trackMetric('randomJumps', 1);
+        setTimeout(() => {
+            jokeElement.classList.remove('animate__animated', 'animate__bounce');
+        }, 1000);
     },
     
     showLoading() {
@@ -3254,23 +3542,28 @@ const jokesManager = window.jokesManager = {
             const question = document.getElementById('jokeQuestion').value.trim();
             const answer = document.getElementById('jokeAnswer').value.trim();
             const category = document.getElementById('jokeCategory').value;
+            const allowedCategories = this.getAllowedCategories();
             
-            if (!question || !answer) {
+            if (!question || !answer || !allowedCategories.has(category)) {
                 this.showToast('Please fill in both question and answer!');
                 return;
             }
             
             try {
                 const newJoke = {
-                    id: this.jokes.length + 1,
+                    id: this.getNextJokeId(),
                     question,
                     answer,
                     category,
-                    likes: 0
+                    likes: 0,
+                    userSubmitted: true,
+                    createdAt: new Date().toISOString()
                 };
                 
                 this.jokes.unshift(newJoke);
+                this.saveUserJokes();
                 this.renderJokes();
+                this.updateUrlState();
                 
                 // Clear form
                 form.reset();
@@ -3358,7 +3651,10 @@ const jokesManager = window.jokesManager = {
         if (!paginationContainer) return;
         
         const jokesCount = totalFiltered !== undefined ? totalFiltered : this.jokes.length;
-        const totalPages = Math.ceil(jokesCount / this.jokesPerPage);
+        const totalPages = Math.max(1, Math.ceil(jokesCount / this.jokesPerPage));
+        if (this.currentPage > totalPages) {
+            this.currentPage = totalPages;
+        }
         const startIndex = (this.currentPage - 1) * this.jokesPerPage;
         const endIndex = Math.min(startIndex + this.jokesPerPage, jokesCount);
         
@@ -3369,15 +3665,31 @@ const jokesManager = window.jokesManager = {
         const prevButton = document.createElement('button');
         prevButton.className = 'pagination-button';
         prevButton.innerHTML = '&laquo;';
-        prevButton.disabled = this.currentPage === 1;
+        prevButton.disabled = this.currentPage === 1 || jokesCount === 0;
         prevButton.setAttribute('aria-label', 'Previous page');
         prevButton.addEventListener('click', () => {
             if (this.currentPage > 1) {
                 this.currentPage--;
                 this.renderJokes();
+                this.updateUrlState();
             }
         });
         paginationContainer.appendChild(prevButton);
+
+        if (jokesCount === 0) {
+            const nextButton = document.createElement('button');
+            nextButton.className = 'pagination-button';
+            nextButton.innerHTML = '&raquo;';
+            nextButton.disabled = true;
+            nextButton.setAttribute('aria-label', 'Next page');
+            paginationContainer.appendChild(nextButton);
+
+            const pageInfo = document.createElement('span');
+            pageInfo.className = 'pagination-info';
+            pageInfo.textContent = 'Showing 0-0 of 0 jokes';
+            paginationContainer.appendChild(pageInfo);
+            return;
+        }
         
         // Function to add page button
         const addPageButton = (pageNum) => {
@@ -3388,6 +3700,7 @@ const jokesManager = window.jokesManager = {
                 this.currentPage = pageNum;
                 this.renderJokes();
                 this.updatePagination();
+                this.updateUrlState();
             });
             paginationContainer.appendChild(pageButton);
         };
@@ -3434,12 +3747,13 @@ const jokesManager = window.jokesManager = {
         const nextButton = document.createElement('button');
         nextButton.className = 'pagination-button';
         nextButton.innerHTML = '&raquo;';
-        nextButton.disabled = this.currentPage === totalPages;
+        nextButton.disabled = this.currentPage >= totalPages;
         nextButton.setAttribute('aria-label', 'Next page');
         nextButton.addEventListener('click', () => {
             if (this.currentPage < totalPages) {
                 this.currentPage++;
                 this.renderJokes();
+                this.updateUrlState();
             }
         });
         paginationContainer.appendChild(nextButton);
@@ -3493,12 +3807,8 @@ const jokesManager = window.jokesManager = {
 
 // Initialize jokes manager on page load
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize all managers in the correct order
-    theme.init();
     jokesManager.init();
-    searchManager.init();
-    filterManager.init();
-}); 
+});
 
 function showLoadingState() {
     const jokesGrid = document.querySelector('.jokes-grid');

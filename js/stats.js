@@ -1,6 +1,7 @@
 /* eslint-env browser */
 // Stats and Achievements Manager
 const statsManager = window.statsManager = {
+    initialized: false,
     stats: {
         jokesViewed: new Set(),
         totalReactions: 0,
@@ -14,42 +15,42 @@ const statsManager = window.statsManager = {
             icon: '😂',
             name: 'First Laugh',
             description: 'React to your first joke',
-            condition: () => this.stats.totalReactions >= 1
+            condition() { return this.stats.totalReactions >= 1; }
         },
         {
             id: 'joke_explorer',
             icon: '🔍',
             name: 'Joke Explorer',
             description: 'View 10 different jokes',
-            condition: () => this.stats.jokesViewed.size >= 10
+            condition() { return this.stats.jokesViewed.size >= 10; }
         },
         {
             id: 'category_master',
             icon: '🎓',
             name: 'Category Master',
             description: 'View jokes from 5 different categories',
-            condition: () => Object.keys(this.stats.categoryViews).length >= 5
+            condition() { return Object.keys(this.stats.categoryViews).length >= 5; }
         },
         {
             id: 'reaction_enthusiast',
             icon: '🔥',
             name: 'Reaction Enthusiast',
             description: 'Give 20 reactions',
-            condition: () => this.stats.totalReactions >= 20
+            condition() { return this.stats.totalReactions >= 20; }
         },
         {
             id: 'joke_connoisseur',
             icon: '🤓',
             name: 'Joke Connoisseur',
             description: 'View 50 jokes',
-            condition: () => this.stats.jokesViewed.size >= 50
+            condition() { return this.stats.jokesViewed.size >= 50; }
         },
         {
             id: 'night_owl',
             icon: '🌙',
             name: 'Night Owl',
             description: 'Browse jokes after midnight',
-            condition: () => {
+            condition() {
                 const hour = new Date().getHours();
                 return hour >= 0 && hour < 6;
             }
@@ -59,7 +60,7 @@ const statsManager = window.statsManager = {
             icon: '🌅',
             name: 'Early Bird',
             description: 'Browse jokes before 7 AM',
-            condition: () => {
+            condition() {
                 const hour = new Date().getHours();
                 return hour >= 5 && hour < 7;
             }
@@ -69,7 +70,7 @@ const statsManager = window.statsManager = {
             icon: '🎮',
             name: 'Weekend Coder',
             description: 'Browse jokes on Saturday or Sunday',
-            condition: () => {
+            condition() {
                 const day = new Date().getDay();
                 return day === 0 || day === 6;
             }
@@ -79,18 +80,20 @@ const statsManager = window.statsManager = {
             icon: '💎',
             name: 'Collector',
             description: 'React to 10 jokes',
-            condition: () => this.stats.totalReactions >= 10
+            condition() { return this.stats.totalReactions >= 10; }
         },
         {
             id: 'all_categories',
             icon: '🌟',
             name: 'All Categories',
             description: 'View jokes from all 14 categories',
-            condition: () => Object.keys(this.stats.categoryViews).length >= 14
+            condition() { return Object.keys(this.stats.categoryViews).length >= 14; }
         }
     ],
     
     init() {
+        if (this.initialized) return;
+        this.initialized = true;
         this.loadStats();
         this.setupEventListeners();
         this.checkTimeBasedAchievements();

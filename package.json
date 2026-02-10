@@ -9,7 +9,10 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "node tests/lint.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "check": "npm run lint && npm run test && npm run build"
   },
   "dependencies": {
     "vite": "latest"

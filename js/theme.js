@@ -1,11 +1,16 @@
 /* eslint-env browser */
 // Theme management
-console.log('Theme script loaded');
-
 const theme = window.theme = {
     current: localStorage.getItem('theme') || 'dark',
+    initialized: false,
     
     init() {
+        if (this.initialized) {
+            this.setTheme(this.current);
+            return;
+        }
+        this.initialized = true;
+
         // Set initial theme immediately to prevent flash
         this.setTheme(this.current);
         

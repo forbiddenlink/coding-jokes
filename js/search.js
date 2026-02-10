@@ -4,8 +4,11 @@ const searchManager = window.searchManager = {
     debounceTimer: null,
     debounceDelay: 300,
     currentQuery: '',
+    initialized: false,
     
     init() {
+        if (this.initialized) return;
+        this.initialized = true;
         this.addEventListeners();
     },
     
@@ -34,6 +37,9 @@ const searchManager = window.searchManager = {
     search(query) {
         this.currentQuery = query;
         if (typeof jokesManager !== 'undefined') {
+            if (typeof jokesManager.trackSearch === 'function') {
+                jokesManager.trackSearch(query);
+            }
             jokesManager.currentSearch = query;
             jokesManager.applyFilters();
         } else {
