@@ -1,187 +1,306 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="theme-color" content="#0a0e14">
-        <meta name="robots" content="index,follow">
-        <meta name="description" content="A collection of funny programming jokes for developers. Browse, search, and share the best coding humor across JavaScript, Python, Java, and more!">
-        <meta name="keywords" content="programming jokes, coding humor, developer jokes, tech jokes, JavaScript jokes, Python jokes">
-        <meta name="author" content="Elizabeth Stein">
-        <meta property="og:title" content="Coding Jokes - Programming Humor for Developers">
-        <meta property="og:description" content="A collection of the funniest programming jokes, curated by developers for developers.">
-        <meta property="og:type" content="website">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Coding Jokes - Programming Humor">
-        <meta name="twitter:description" content="Laugh with fellow developers! Browse our collection of programming jokes.">
-        <link rel="canonical" href="https://coding-jokes.vercel.app/">
-        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><rect x='8' y='8' width='84' height='84' rx='8' fill='%23161b22' stroke='%2300ff41' stroke-width='2'/><text x='50' y='62' font-size='42' text-anchor='middle' font-family='monospace' fill='%2300ff41'>&gt;_</text><rect x='60' y='48' width='3' height='18' fill='%2300ff41'><animate attributeName='opacity' values='1;0;1' dur='1s' repeatCount='indefinite'/></rect></svg>">
-        <title>Coding Jokes - Programming Humor for Developers</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Recursive:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <a href="#main-content" class="skip-link">Skip to main content</a>
-        <div class="container">
-            <header>
-                <h1><span class="terminal-prompt">~/humor $</span> Coding<span class="cursor-blink">_</span>Jokes</h1>
-                <div class="controls">
-                    <button type="button" class="theme-toggle" aria-label="Toggle theme" id="themeToggle">
-                        <i class="fas fa-moon"></i>
-                        <span>Toggle Dark Mode</span>
-                    </button>
-                    <div class="search-container">
-                        <input type="text" id="searchInput" placeholder="Search jokes..." class="search-input" aria-label="Search jokes">
-                        <i class="fas fa-search search-icon" aria-hidden="true"></i>
-                        <div class="search-results-count" aria-live="polite"></div>
-                    </div>
-                    <div class="filter-container">
-                        <label for="categoryFilter" class="sr-only">Filter by category</label>
-                        <select id="categoryFilter" class="category-filter" aria-label="Filter by category">
-                            <option value="all">All Categories</option>
-                            <option value="javascript">JavaScript</option>
-                            <option value="python">Python</option>
-                            <option value="java">Java</option>
-                            <option value="general">General Programming</option>
-                            <option value="web">Web Development</option>
-                            <option value="testing">Testing & QA</option>
-                            <option value="design">Design & UX</option>
-                            <option value="security">Security</option>
-                            <option value="mobile">Mobile Development</option>
-                            <option value="startup">Startup & Tech Industry</option>
-                            <option value="ai">AI & Machine Learning</option>
-                            <option value="database">Database</option>
-                            <option value="devops">DevOps</option>
-                            <option value="hardware">Hardware</option>
-                        </select>
-                        <div class="filter-results-count" aria-live="polite"></div>
-                    </div>
-                    <button class="random-joke" aria-label="Show random joke">
-                        <i class="fas fa-random"></i> Random Joke
-                    </button>
-                    <button class="stats-button" aria-label="View your stats" title="View your stats">
-                        <i class="fas fa-chart-bar"></i>
-                    </button>
-                </div>
-            </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0e14" />
+    <meta name="robots" content="index,follow" />
+    <meta
+      name="description"
+      content="A collection of funny programming jokes for developers. Browse, search, and share the best coding humor across JavaScript, Python, Java, and more!"
+    />
+    <meta
+      name="keywords"
+      content="programming jokes, coding humor, developer jokes, tech jokes, JavaScript jokes, Python jokes"
+    />
+    <meta name="author" content="Elizabeth Stein" />
+    <meta
+      property="og:title"
+      content="Coding Jokes - Programming Humor for Developers"
+    />
+    <meta
+      property="og:description"
+      content="A collection of the funniest programming jokes, curated by developers for developers."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://coding-jokes.vercel.app/" />
+    <meta
+      property="og:image"
+      content="https://coding-jokes.vercel.app/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Coding Jokes - Programming Humor" />
+    <meta
+      name="twitter:description"
+      content="Laugh with fellow developers! Browse our collection of programming jokes."
+    />
+    <meta
+      name="twitter:image"
+      content="https://coding-jokes.vercel.app/og-image.png"
+    />
+    <link rel="canonical" href="https://coding-jokes.vercel.app/" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json">
+    <title>Coding Jokes - Programming Humor for Developers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Recursive:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="container">
+      <header>
+        <h1>
+          <span class="terminal-prompt">~/humor $</span> Coding<span
+            class="cursor-blink"
+            >_</span
+          >Jokes
+        </h1>
+        <div class="controls">
+          <button
+            type="button"
+            class="theme-toggle"
+            aria-label="Toggle theme"
+            id="themeToggle"
+          >
+            <i class="fas fa-moon"></i>
+            <span>Toggle Dark Mode</span>
+          </button>
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search jokes..."
+              class="search-input"
+              aria-label="Search jokes"
+            />
+            <i class="fas fa-search search-icon" aria-hidden="true"></i>
+            <div class="search-results-count" aria-live="polite"></div>
+          </div>
+          <div class="filter-container">
+            <label for="categoryFilter" class="sr-only"
+              >Filter by category</label
+            >
+            <select
+              id="categoryFilter"
+              class="category-filter"
+              aria-label="Filter by category"
+            >
+              <option value="all">All Categories</option>
+              <option value="javascript">JavaScript</option>
+              <option value="python">Python</option>
+              <option value="java">Java</option>
+              <option value="general">General Programming</option>
+              <option value="web">Web Development</option>
+              <option value="testing">Testing & QA</option>
+              <option value="design">Design & UX</option>
+              <option value="security">Security</option>
+              <option value="mobile">Mobile Development</option>
+              <option value="startup">Startup & Tech Industry</option>
+              <option value="ai">AI & Machine Learning</option>
+              <option value="database">Database</option>
+              <option value="devops">DevOps</option>
+              <option value="hardware">Hardware</option>
+            </select>
+            <div class="filter-results-count" aria-live="polite"></div>
+          </div>
+          <button class="random-joke" aria-label="Show random joke">
+            <i class="fas fa-random"></i> Random Joke
+          </button>
+          <button
+            class="stats-button"
+            aria-label="View your stats"
+            title="View your stats"
+          >
+            <i class="fas fa-chart-bar"></i>
+          </button>
+        </div>
+      </header>
 
-            <main id="main-content">
-                <!-- Stats Dashboard -->
-                <div class="stats-dashboard hidden" id="statsDashboard">
-                    <div class="stats-header">
-                        <h2><i class="fas fa-trophy"></i> Your Stats</h2>
-                        <button class="close-stats" aria-label="Close stats"><i class="fas fa-times"></i></button>
-                    </div>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-icon">😂</div>
-                            <div class="stat-value" id="totalReactions">0</div>
-                            <div class="stat-label">Total Reactions</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon">📚</div>
-                            <div class="stat-value" id="jokesViewed">0</div>
-                            <div class="stat-label">Jokes Viewed</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon">⭐</div>
-                            <div class="stat-value" id="favoriteCategory">—</div>
-                            <div class="stat-label">Favorite Category</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon">🎯</div>
-                            <div class="stat-value" id="achievementCount">0</div>
-                            <div class="stat-label">Achievements</div>
-                        </div>
-                    </div>
-                    <div class="achievements-section">
-                        <h3><i class="fas fa-medal"></i> Achievements</h3>
-                        <div class="achievements-grid" id="achievementsGrid"></div>
-                    </div>
-                </div>
-                
-                <div class="filter-status" aria-live="polite" aria-atomic="true"></div>
-                
-                <section class="hero" aria-labelledby="hero-title">
-                    <div class="terminal-window">
-                        <div class="terminal-header">
-                            <span class="terminal-dot red"></span>
-                            <span class="terminal-dot yellow"></span>
-                            <span class="terminal-dot green"></span>
-                            <span class="terminal-title">welcome.sh</span>
-                        </div>
-                        <div class="terminal-body">
-                            <h2 id="hero-title"><span class="terminal-output">$</span> echo "Welcome to Coding Jokes"</h2>
-                            <p class="typewriter-text">A collection of the funniest programming jokes, curated by developers for developers. <span class="text-glow">console.log("Share a laugh with your fellow coders!");</span></p>
-                        </div>
-                    </div>
-            </section>
-
-                <section class="featured-section" aria-labelledby="featured-title">
-                    <h2 id="featured-title"><span class="section-icon">&#9733;</span> Featured<span class="code-comment"> // top picks</span></h2>
-                    <div class="featured-jokes" aria-live="polite">
-                        <!-- Featured jokes will be dynamically inserted here -->
-                    </div>
-                </section>
-
-                <section class="jokes-section" aria-labelledby="jokes-title">
-                    <h2 id="jokes-title"><span class="section-icon">&gt;</span> All Jokes<span class="code-comment"> // the full archive</span></h2>
-                    <div class="jokes-grid" aria-live="polite" role="list">
-                        <!-- Jokes will be dynamically inserted here -->
-                </div>
-            </section>
-            
-                <section class="submit-section" aria-labelledby="submit-title">
-                    <h2 id="submit-title"><span class="section-icon">+</span> Submit Your Joke<span class="code-comment"> // push to repo</span></h2>
-                    <form id="submitJokeForm" class="submit-joke" aria-label="Submit a new joke">
-                    <div class="form-group">
-                        <label for="jokeQuestion">Question</label>
-                            <input type="text" id="jokeQuestion" name="question" autocomplete="off" required aria-required="true" aria-label="Joke question">
-                    </div>
-                    <div class="form-group">
-                            <label for="jokeAnswer">Answer</label>
-                            <input type="text" id="jokeAnswer" name="answer" autocomplete="off" required aria-required="true" aria-label="Joke answer">
-                    </div>
-                    <div class="form-group">
-                        <label for="jokeCategory">Category</label>
-                            <select id="jokeCategory" name="category" required aria-required="true" aria-label="Joke category">
-                            <option value="javascript">JavaScript</option>
-                            <option value="python">Python</option>
-                            <option value="java">Java</option>
-                            <option value="general">General Programming</option>
-                            <option value="web">Web Development</option>
-                            <option value="testing">Testing & QA</option>
-                            <option value="design">Design & UX</option>
-                            <option value="security">Security</option>
-                            <option value="mobile">Mobile Development</option>
-                            <option value="startup">Startup & Tech Industry</option>
-                            <option value="ai">AI & Machine Learning</option>
-                            <option value="database">Database</option>
-                            <option value="devops">DevOps</option>
-                            <option value="hardware">Hardware</option>
-                        </select>
-                    </div>
-                        <button type="submit" class="submit-button">Submit Joke</button>
-                </form>
-            </section>
-            </main>
-
-            <footer>
-                <div class="footer-terminal">
-                    <span class="terminal-output">$</span> <span class="footer-text">exit</span>
-                </div>
-                <p class="footer-copyright">&copy; 2025 Elizabeth Stein <span class="code-comment">// All rights reserved</span></p>
-            </footer>
+      <main id="main-content">
+        <!-- Stats Dashboard -->
+        <div class="stats-dashboard hidden" id="statsDashboard">
+          <div class="stats-header">
+            <h2><i class="fas fa-trophy"></i> Your Stats</h2>
+            <button class="close-stats" aria-label="Close stats">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">😂</div>
+              <div class="stat-value" id="totalReactions">0</div>
+              <div class="stat-label">Total Reactions</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">📚</div>
+              <div class="stat-value" id="jokesViewed">0</div>
+              <div class="stat-label">Jokes Viewed</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">⭐</div>
+              <div class="stat-value" id="favoriteCategory">—</div>
+              <div class="stat-label">Favorite Category</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🎯</div>
+              <div class="stat-value" id="achievementCount">0</div>
+              <div class="stat-label">Achievements</div>
+            </div>
+          </div>
+          <div class="achievements-section">
+            <h3><i class="fas fa-medal"></i> Achievements</h3>
+            <div class="achievements-grid" id="achievementsGrid"></div>
+          </div>
         </div>
 
-        <!-- Scripts -->
-        <script type="module" src="/js/theme.js"></script>
-        <script type="module" src="/js/stats.js"></script>
-        <script type="module" src="/js/jokes.js"></script>
-        <script type="module" src="/js/search.js"></script>
-        <script type="module" src="/js/filters.js"></script>
-    </body>
+        <div class="filter-status" aria-live="polite" aria-atomic="true"></div>
+
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <span class="terminal-title">welcome.sh</span>
+            </div>
+            <div class="terminal-body">
+              <h2 id="hero-title">
+                <span class="terminal-output">$</span> echo "Welcome to Coding
+                Jokes"
+              </h2>
+              <p class="typewriter-text">
+                A collection of the funniest programming jokes, curated by
+                developers for developers.
+                <span class="text-glow"
+                  >console.log("Share a laugh with your fellow coders!");</span
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="featured-section" aria-labelledby="featured-title">
+          <h2 id="featured-title">
+            <span class="section-icon">&#9733;</span> Featured<span
+              class="code-comment"
+            >
+              // top picks</span
+            >
+          </h2>
+          <div class="featured-jokes" aria-live="polite">
+            <!-- Featured jokes will be dynamically inserted here -->
+          </div>
+        </section>
+
+        <section class="jokes-section" aria-labelledby="jokes-title">
+          <h2 id="jokes-title">
+            <span class="section-icon">&gt;</span> All Jokes<span
+              class="code-comment"
+            >
+              // the full archive</span
+            >
+          </h2>
+          <ul class="jokes-grid" aria-live="polite">
+            <!-- Jokes will be dynamically inserted here -->
+          </ul>
+        </section>
+
+        <section class="submit-section" aria-labelledby="submit-title">
+          <h2 id="submit-title">
+            <span class="section-icon">+</span> Submit Your Joke<span
+              class="code-comment"
+            >
+              // push to repo</span
+            >
+          </h2>
+          <form
+            id="submitJokeForm"
+            class="submit-joke"
+            aria-label="Submit a new joke"
+          >
+            <div class="form-group">
+              <label for="jokeQuestion">Question</label>
+              <input
+                type="text"
+                id="jokeQuestion"
+                name="question"
+                autocomplete="off"
+                required
+                aria-required="true"
+                aria-label="Joke question"
+              />
+            </div>
+            <div class="form-group">
+              <label for="jokeAnswer">Answer</label>
+              <input
+                type="text"
+                id="jokeAnswer"
+                name="answer"
+                autocomplete="off"
+                required
+                aria-required="true"
+                aria-label="Joke answer"
+              />
+            </div>
+            <div class="form-group">
+              <label for="jokeCategory">Category</label>
+              <select
+                id="jokeCategory"
+                name="category"
+                required
+                aria-required="true"
+                aria-label="Joke category"
+              >
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="general">General Programming</option>
+                <option value="web">Web Development</option>
+                <option value="testing">Testing & QA</option>
+                <option value="design">Design & UX</option>
+                <option value="security">Security</option>
+                <option value="mobile">Mobile Development</option>
+                <option value="startup">Startup & Tech Industry</option>
+                <option value="ai">AI & Machine Learning</option>
+                <option value="database">Database</option>
+                <option value="devops">DevOps</option>
+                <option value="hardware">Hardware</option>
+              </select>
+            </div>
+            <button type="submit" class="submit-button">Submit Joke</button>
+          </form>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-terminal">
+          <span class="terminal-output">$</span>
+          <span class="footer-text">exit</span>
+        </div>
+        <p class="footer-copyright">
+          &copy; 2025 Elizabeth Stein
+          <span class="code-comment">// All rights reserved</span>
+        </p>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/js/theme.js"></script>
+    <script type="module" src="/js/stats.js"></script>
+    <script type="module" src="/js/jokes.js"></script>
+    <script type="module" src="/js/search.js"></script>
+    <script type="module" src="/js/filters.js"></script>
+  </body>
 </html>

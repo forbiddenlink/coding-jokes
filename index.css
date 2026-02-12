@@ -548,6 +548,7 @@ button {
     gap: var(--space-xl);
     margin-top: var(--space-lg);
     padding: var(--space-sm) 0;
+    list-style: none;
 }
 
 .joke,
