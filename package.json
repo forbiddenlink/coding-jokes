@@ -4,7 +4,17 @@
   "description": "A modern web application with 400+ programming jokes, emoji reactions, achievements, 3D effects, and personal stats tracking",
   "author": "Elizabeth Stein",
   "license": "MIT",
-  "keywords": ["programming", "jokes", "humor", "web-app", "javascript", "gamification", "achievements", "3d-effects", "modern-design"],
+  "keywords": [
+    "programming",
+    "jokes",
+    "humor",
+    "web-app",
+    "javascript",
+    "gamification",
+    "achievements",
+    "3d-effects",
+    "modern-design"
+  ],
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -21,5 +31,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/forbiddenlink/coding-jokes"
-  }
+  },
+  "private": false
 }
