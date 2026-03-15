@@ -7,23 +7,19 @@ pnpm-lock.yaml
 # Build output
 dist/
 .dist/
-
 # Environment
 .env
 .env.local
 .env.*.local
-
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-
 #Ignore vscode AI rules
 .github/instructions/codacy.instructions.md
 .vercel
 .env*.local
-
 # Specter knowledge graph cache
 .specter/
 .claude
@@ -41,3 +37,9 @@ __pycache__/
 coverage/
 test_run/
 supabase/.temp/
+.next/
+build/
+out/
+# OS
+.DS_Store
+Thumbs.db
