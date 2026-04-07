@@ -22,15 +22,21 @@
     "preview": "vite preview",
     "lint": "node tests/lint.cjs",
     "test": "node --test tests/*.test.cjs",
-    "check": "npm run lint && npm run test && npm run build"
+    "check": "npm run lint && npm run test && npm run build",
+    "biome:check": "biome check .",
+    "biome:fix": "biome check . --write",
+    "biome:format": "biome format . --write"
   },
   "dependencies": {
+    "posthog-js": "^1.364.1",
     "vite": "latest"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/forbiddenlink/coding-jokes"
   },
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.9"
+  }
 }
