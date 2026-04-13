@@ -44,3 +44,4 @@ out/
 .DS_Store
 Thumbs.db
 .env*
+package-lock.json
