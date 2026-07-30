@@ -9,4 +9,4 @@ overrides:
   minimatch: ">=10.2.5"
   lodash: ">=4.17.21"
   flatted: ">=3.3.4"
-  undici: ">=7.0.0"
+  undici: ">=7.28.0 <8"
