@@ -45,3 +45,4 @@ out/
 Thumbs.db
 .env*
 package-lock.json
+.audit-report.md
