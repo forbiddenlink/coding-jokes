@@ -22,14 +22,16 @@
     "preview": "vite preview",
     "lint": "node tests/lint.cjs",
     "test": "node --test tests/*.test.cjs",
-    "check": "npm run lint && npm run test && npm run build",
+    "check": "pnpm lint && pnpm test && pnpm build",
+    "security": "pnpm audit --audit-level high",
+    "audit": "pnpm audit --audit-level high",
     "biome:check": "biome check .",
     "biome:fix": "biome check . --write",
     "biome:format": "biome format . --write"
   },
   "dependencies": {
     "posthog-js": "^1.364.1",
-    "vite": "latest"
+    "vite": "^8.0.16"
   },
   "repository": {
     "type": "git",
@@ -38,5 +40,13 @@
   "private": false,
   "devDependencies": {
     "@biomejs/biome": "^2.4.9"
+  },
+  "pnpm": {
+    "overrides": {
+      "nanoid": "3.3.18",
+      "postcss": "8.5.18",
+      "protobufjs": "8.4.1",
+      "vite": "8.0.16"
+    }
   }
 }

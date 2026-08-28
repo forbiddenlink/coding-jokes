@@ -1,0 +1,28 @@
+{
+  "allowedForCodex": true,
+  "automationLevel": "manual",
+  "confidentialContext": "none",
+  "context": "personal",
+  "hosting": [],
+  "kind": "app",
+  "lastReviewedAt": "2026-08-27",
+  "lifecycle": "prototype",
+  "notes": "Small content/product prototype with PostHog signal. Low priority except as a simple analytics or content workflow testbed.",
+  "observability": [
+    "posthog"
+  ],
+  "ownerContext": "personal",
+  "source": "owned",
+  "surface": "product",
+  "systems": [
+    "solo-control-tower",
+    "content"
+  ],
+  "tags": [
+    "biome",
+    "posthog"
+  ],
+  "urls": {
+    "repository": "https://github.com/forbiddenlink/coding-jokes"
+  }
+}
