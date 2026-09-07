@@ -30,7 +30,7 @@
     "biome:format": "biome format . --write"
   },
   "dependencies": {
-    "posthog-js": "^1.418.10",
+    "posthog-js": "^1.422.5",
     "vite": "^8.2.2"
   },
   "repository": {
@@ -39,7 +39,7 @@
   },
   "private": false,
   "devDependencies": {
-    "@biomejs/biome": "^2.5.10"
+    "@biomejs/biome": "^2.5.12"
   },
   "pnpm": {
     "overrides": {
