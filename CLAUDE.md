@@ -1,6 +1,6 @@
 # coding-jokes
 
-Vanilla HTML/CSS/JS web app: 400+ programming jokes with search, category filters,
+Vanilla HTML/CSS/JS web app: 394 programming jokes with search, category filters,
 emoji reactions, achievements, and stats tracking. No framework, no backend.
 Live at https://coding-jokes.vercel.app/.
 

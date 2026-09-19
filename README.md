@@ -1,6 +1,6 @@
 # 😂 Coding Jokes
 
-A modern, interactive web app with 400+ programming jokes: search, category filters, emoji
+A modern, interactive web app with 394 programming jokes: search, category filters, emoji
 reactions, achievements, and personal stats tracking. Built with vanilla HTML, CSS, and
 JavaScript, no framework, no backend.
 
@@ -10,7 +10,7 @@ JavaScript, no framework, no backend.
 
 ## Features
 
-- 400+ programming jokes across 14 categories (JavaScript, Python, Java, Web Dev, DevOps,
+- 394 programming jokes across 14 categories (JavaScript, Python, Java, Web Dev, DevOps,
   AI/ML, and more)
 - Real-time search with debouncing, category filtering, and smart sorting (newest, most
   popular, by category)
