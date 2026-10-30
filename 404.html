@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0e14" />
+    <meta name="robots" content="noindex" />
+    <title>404 - Page not found | Coding Jokes</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Recursive:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="container">
+      <header>
+        <h1>
+          <span class="terminal-prompt">~/humor $</span> Coding<span
+            class="cursor-blink"
+            >_</span
+          >Jokes
+        </h1>
+      </header>
+
+      <main id="main-content">
+        <section class="hero notfound" aria-labelledby="notfound-title">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <span class="terminal-title">404.sh</span>
+            </div>
+            <div class="terminal-body">
+              <h2 id="notfound-title">
+                <span class="terminal-output">$</span> cd
+                <span class="notfound-path" id="notfoundPath">this/page</span>
+              </h2>
+              <p class="notfound-error" role="status">
+                bash: cd: No such file or directory
+                <span class="code-comment">// 404</span>
+              </p>
+              <p class="notfound-cmd">
+                <span class="terminal-output">$</span> cat nearest-joke.txt
+              </p>
+              <p class="notfound-joke">
+                Why do Next.js developers never get lost?
+                <span class="text-glow">They always know the route! 🗺️</span>
+              </p>
+              <p class="notfound-cmd">
+                <span class="terminal-output">$</span> cd ~
+              </p>
+              <a class="notfound-home" href="/">Back to all jokes</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-terminal">
+          <span class="terminal-output">$</span>
+          <span class="footer-text">exit</span>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="/js/theme.js"></script>
+    <script type="module">
+      const path = window.location.pathname.replace(/^\/+/, "");
+      if (path) {
+        document.getElementById("notfoundPath").textContent = path;
+      }
+    </script>
+  </body>
+</html>
