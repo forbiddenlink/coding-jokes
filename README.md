@@ -1,4 +1,4 @@
-# 😂 Coding Jokes
+# Coding jokes
 
 A modern, interactive web app with 394 programming jokes: search, category filters, emoji
 reactions, achievements, and personal stats tracking. Built with vanilla HTML, CSS, and
@@ -14,11 +14,10 @@ JavaScript, no framework, no backend.
   AI/ML, and more)
 - Real-time search with debouncing, category filtering, and smart sorting (newest, most
   popular, by category)
-- Emoji reactions (not just likes), a submit-your-own-joke form, copy & share
+- Emoji reactions (not just likes), a submit-your-own-joke form, copy and share
 - Achievement system with 10 unlockable achievements and a personal stats dashboard
 - Dark/light mode, fully responsive, accessibility-first (ARIA labels, skip links, keyboard
   navigation)
-- 3D card effects, gradient backgrounds, and micro-interactions
 
 ## Quick start
 
@@ -80,12 +79,12 @@ curl https://coding-jokes.vercel.app/api/today
 `lang` is a joke category (javascript, python, devops, ...). An unknown value returns 404 with the
 list of valid categories. `/api/today` returns one joke per UTC day.
 
-## Env vars
+## Environment variables
 
 `VITE_POSTHOG_KEY` and `VITE_POSTHOG_HOST` enable PostHog analytics (`js/analytics.js`);
 PostHog init is skipped if the key is unset. No other env vars needed since there is no backend.
 
-## Adding jokes
+## Add jokes
 
 Use the submit form on the site, or edit `js/jokes-data.json` directly and open a PR. Jokes should be
 programming or tech-related, appropriate and inclusive, properly categorized, and original or
@@ -99,26 +98,16 @@ properly attributed.
 4. Push to the branch
 5. Open a pull request
 
-## Technologies
+## Tech stack
 
 HTML5, CSS3 (custom properties, Grid, Flexbox), vanilla JavaScript (ES6+), Vite, Biome,
-Font Awesome, Google Fonts (Space Grotesk & Inter), Animate.css.
+Font Awesome (CDN) and Google Fonts (JetBrains Mono and Recursive).
 
 ## Acknowledgments
 
 Original concept developed as part of the Scrimba Frontend Developer Career Path, enhanced and
-expanded by Elizabeth Stein. Icons by Font Awesome, fonts by Google Fonts.
+expanded by Elizabeth Stein.
 
 ## License
 
 MIT, see [LICENSE](LICENSE).
-
----
-
-<div align="center">
-
-**[⬆ back to top](#-coding-jokes)**
-
-If you found this project helpful, consider giving it a star.
-
-</div>
