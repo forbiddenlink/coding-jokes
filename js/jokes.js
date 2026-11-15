@@ -3218,6 +3218,7 @@ const jokesManager = window.jokesManager = {
                 <div class="joke-actions">
                     <button class="reveal-button" 
                             aria-label="Reveal punchline"
+                            aria-expanded="false"
                             aria-controls="joke-${safeId}-punchline">
                         <i class="fas fa-eye"></i> <span>Reveal</span>
                     </button>
@@ -3307,6 +3308,8 @@ const jokesManager = window.jokesManager = {
         if (punchline.classList.toggle('visible')) {
             icon.className = 'fas fa-eye-slash';
             revealButton.querySelector('span').textContent = 'Hide';
+            revealButton.setAttribute('aria-expanded', 'true');
+            revealButton.setAttribute('aria-label', 'Hide punchline');
             punchline.setAttribute('aria-expanded', 'true');
             punchline.classList.add('animate__animated', 'animate__fadeIn');
             this.announceToScreenReader('Punchline revealed');
@@ -3321,6 +3324,8 @@ const jokesManager = window.jokesManager = {
         } else {
             icon.className = 'fas fa-eye';
             revealButton.querySelector('span').textContent = 'Reveal';
+            revealButton.setAttribute('aria-expanded', 'false');
+            revealButton.setAttribute('aria-label', 'Reveal punchline');
             punchline.setAttribute('aria-expanded', 'false');
             punchline.classList.remove('animate__animated', 'animate__fadeIn');
         }
