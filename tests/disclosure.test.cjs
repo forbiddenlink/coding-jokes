@@ -6,7 +6,9 @@ const vm = require('node:vm');
 
 test('punchline control exposes its expanded state and current action', () => {
     const context = { window: {}, document: { addEventListener() {} } };
-    vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../js/jokes.js'), 'utf8'), context);
+    // jokes.js is an ES module; drop the data import since togglePunchline does not use it.
+    const source = fs.readFileSync(path.join(__dirname, '../js/jokes.js'), 'utf8').replace(/^import .*$/m, '');
+    vm.runInNewContext(source, context);
     const manager = context.window.jokesManager;
     manager.announceToScreenReader = () => {};
     manager.trackMetric = () => {};
