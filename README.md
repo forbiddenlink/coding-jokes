@@ -54,15 +54,31 @@ coding-jokes/
 ├── index.html      # app shell
 ├── index.css       # styling
 ├── js/
-│   ├── jokes.js       # joke data, rendering, persistence
+│   ├── jokes-data.json # the jokes (shared by the UI and the API)
+│   ├── jokes.js       # rendering, persistence
 │   ├── search.js      # debounced search
 │   ├── filters.js     # category filtering
 │   ├── stats.js        # stats dashboard
 │   ├── theme.js         # dark/light mode
 │   └── analytics.js     # PostHog
-├── tests/          # lint.cjs, app.test.cjs
+├── api/            # /api/random and /api/today (Vercel functions)
+├── tests/          # lint.cjs, app.test.cjs, api.test.cjs
 └── public/         # favicon, manifest, sitemap, robots.txt
 ```
+
+## API
+
+Two read-only endpoints serve the same jokes as the site. Plain text by default (readable in a
+terminal), JSON with `?format=json` or `Accept: application/json`.
+
+```
+curl https://coding-jokes.vercel.app/api/random
+curl "https://coding-jokes.vercel.app/api/random?lang=python&format=json"
+curl https://coding-jokes.vercel.app/api/today
+```
+
+`lang` is a joke category (javascript, python, devops, ...). An unknown value returns 404 with the
+list of valid categories. `/api/today` returns one joke per UTC day.
 
 ## Env vars
 
@@ -71,7 +87,7 @@ PostHog init is skipped if the key is unset. No other env vars needed since ther
 
 ## Adding jokes
 
-Use the submit form on the site, or edit `js/jokes.js` directly and open a PR. Jokes should be
+Use the submit form on the site, or edit `js/jokes-data.json` directly and open a PR. Jokes should be
 programming or tech-related, appropriate and inclusive, properly categorized, and original or
 properly attributed.
 

@@ -1,0 +1,2366 @@
+[
+  {
+    "id": 1,
+    "question": "Why did the JavaScript developer feel sad?",
+    "answer": "Because they didn't know how to 'this' 🤔",
+    "category": "javascript"
+  },
+  {
+    "id": 2,
+    "question": "Why do Python programmers always carry an umbrella?",
+    "answer": "For unexpected indentation errors ☂️",
+    "category": "python"
+  },
+  {
+    "id": 3,
+    "question": "What's the object-oriented way to become wealthy?",
+    "answer": "Inheritance 😂",
+    "category": "general"
+  },
+  {
+    "id": 4,
+    "question": "Why did the programmer quit their job?",
+    "answer": "Because they didn't get arrays 😹",
+    "category": "general"
+  },
+  {
+    "id": 5,
+    "question": "Where does CSS go for its eye exam?",
+    "answer": "Visual Studio 💀",
+    "category": "web"
+  },
+  {
+    "id": 6,
+    "question": "What is a programmer's favorite hangout place?",
+    "answer": "Foo Bar 🤣",
+    "category": "general"
+  },
+  {
+    "id": 7,
+    "question": "Why do Java programmers have to wear glasses?",
+    "answer": "Because they don't C# 🙃",
+    "category": "java"
+  },
+  {
+    "id": 8,
+    "question": "How many programmers does it take to change a light bulb?",
+    "answer": "None, that's a hardware problem 💡",
+    "category": "hardware"
+  },
+  {
+    "id": 9,
+    "question": "Why did the React component go to therapy?",
+    "answer": "Because it had too many state issues! 🧘",
+    "category": "web"
+  },
+  {
+    "id": 10,
+    "question": "What's a programmer's favorite type of tree?",
+    "answer": "A binary tree! 🌳",
+    "category": "general"
+  },
+  {
+    "id": 11,
+    "question": "Why did the developer go to the gym?",
+    "answer": "To work on their core strength! 💪",
+    "category": "general"
+  },
+  {
+    "id": 12,
+    "question": "What's a programmer's favorite type of music?",
+    "answer": "Heavy metal! 🤘",
+    "category": "general"
+  },
+  {
+    "id": 13,
+    "question": "Why did the developer go broke?",
+    "answer": "Because they used up all their cache! 💰",
+    "category": "general"
+  },
+  {
+    "id": 14,
+    "question": "What do you call a programmer from Finland?",
+    "answer": "Nerdic! 🧊",
+    "category": "general"
+  },
+  {
+    "id": 15,
+    "question": "Why don't programmers like nature?",
+    "answer": "It has too many bugs and no debugging tool! 🐛",
+    "category": "general"
+  },
+  {
+    "id": 16,
+    "question": "What did the HTML file say to the CSS file after a long day?",
+    "answer": "I'm feeling a bit stylish today! 💅",
+    "category": "web"
+  },
+  {
+    "id": 17,
+    "question": "Why do programmers always mix up Halloween and Christmas?",
+    "answer": "Because Oct 31 == Dec 25! 🎃",
+    "category": "general"
+  },
+  {
+    "id": 18,
+    "question": "What's a database developer's favorite band?",
+    "answer": "The SQL-ed Stones! 🎸",
+    "category": "database"
+  },
+  {
+    "id": 19,
+    "question": "What's a programmer's favorite snack?",
+    "answer": "Cookies! 🍪",
+    "category": "general"
+  },
+  {
+    "id": 20,
+    "question": "Why do programmers prefer dark mode?",
+    "answer": "Because light attracts bugs! 🪲",
+    "category": "general"
+  },
+  {
+    "id": 21,
+    "question": "How do you comfort a JavaScript bug?",
+    "answer": "You console it! 🖥️",
+    "category": "javascript"
+  },
+  {
+    "id": 22,
+    "question": "Why was the function feeling cold?",
+    "answer": "It was left out in the cold by a higher-order function! ❄️",
+    "category": "javascript"
+  },
+  {
+    "id": 23,
+    "question": "Why did the constant break up with the variable?",
+    "answer": "Because the variable was too unstable! 💔",
+    "category": "general"
+  },
+  {
+    "id": 24,
+    "question": "What do you call a programmer who's good at math?",
+    "answer": "A function-al programmer! 📊",
+    "category": "general"
+  },
+  {
+    "id": 25,
+    "question": "Why did the developer go to the beach?",
+    "answer": "To catch some waves and debug their code! 🌊",
+    "category": "general"
+  },
+  {
+    "id": 26,
+    "question": "What's a programmer's favorite type of coffee?",
+    "answer": "Java! ☕",
+    "category": "java"
+  },
+  {
+    "id": 27,
+    "question": "Why did the developer get kicked out of the bar?",
+    "answer": "Because they kept trying to order a 'null' beer! 🍺",
+    "category": "general"
+  },
+  {
+    "id": 28,
+    "question": "Why did the Python developer bring a ladder to work?",
+    "answer": "To climb the scope! 🪜",
+    "category": "python"
+  },
+  {
+    "id": 29,
+    "question": "What's a TypeScript developer's favorite game?",
+    "answer": "Type and seek! 🔍",
+    "category": "javascript"
+  },
+  {
+    "id": 30,
+    "question": "Why did the CSS developer go bankrupt?",
+    "answer": "Because they lost all their class! 💸",
+    "category": "web"
+  },
+  {
+    "id": 31,
+    "question": "What's a Git developer's favorite dance?",
+    "answer": "The commit-ment! 💃",
+    "category": "general"
+  },
+  {
+    "id": 32,
+    "question": "Why did the SQL query go to the chiropractor?",
+    "answer": "Because it had too many JOINs! 🦴",
+    "category": "database"
+  },
+  {
+    "id": 33,
+    "question": "What's a Vue developer's favorite food?",
+    "answer": "Component soup! 🥣",
+    "category": "web"
+  },
+  {
+    "id": 34,
+    "question": "Why did the API feel lonely?",
+    "answer": "Because it had no endpoints! 🔌",
+    "category": "web"
+  },
+  {
+    "id": 35,
+    "question": "What's a Docker container's favorite sport?",
+    "answer": "Port-ball! ⚽",
+    "category": "devops"
+  },
+  {
+    "id": 36,
+    "question": "Why did the async function go to the doctor?",
+    "answer": "Because it couldn't await! 🏥",
+    "category": "javascript"
+  },
+  {
+    "id": 37,
+    "question": "What's a Linux user's favorite exercise?",
+    "answer": "Terminal velocity! 🏃",
+    "category": "general"
+  },
+  {
+    "id": 38,
+    "question": "Why did the Redux store feel confident?",
+    "answer": "Because it was in a constant state! 💪",
+    "category": "web"
+  },
+  {
+    "id": 39,
+    "question": "What's a MongoDB developer's favorite movie?",
+    "answer": "The Document-ary! 📽️",
+    "category": "database"
+  },
+  {
+    "id": 40,
+    "question": "Why did the GraphQL query feel overwhelmed?",
+    "answer": "Too many nested relationships! 🕸️",
+    "category": "web"
+  },
+  {
+    "id": 41,
+    "question": "What's a Ruby developer's favorite gem?",
+    "answer": "The one that's on Rails! 💎",
+    "category": "general"
+  },
+  {
+    "id": 42,
+    "question": "Why did the Kubernetes pod feel lonely?",
+    "answer": "It was in a different namespace! 🚀",
+    "category": "devops"
+  },
+  {
+    "id": 43,
+    "question": "What's a WebSocket's favorite greeting?",
+    "answer": "Stay connected! 🤝",
+    "category": "web"
+  },
+  {
+    "id": 44,
+    "question": "Why did the CORS policy become a bouncer?",
+    "answer": "It was good at handling requests! 🚫",
+    "category": "web"
+  },
+  {
+    "id": 45,
+    "question": "What's a blockchain developer's favorite dance?",
+    "answer": "The block-chain reaction! ⛓️",
+    "category": "general"
+  },
+  {
+    "id": 46,
+    "question": "Why did the machine learning model go to school?",
+    "answer": "To improve its class-ification! 🎓",
+    "category": "ai"
+  },
+  {
+    "id": 47,
+    "question": "What's a Node.js developer's favorite food?",
+    "answer": "Express-o coffee! ☕",
+    "category": "javascript"
+  },
+  {
+    "id": 48,
+    "question": "Why did the AWS Lambda function feel lost?",
+    "answer": "It was serverless! ☁️",
+    "category": "devops"
+  },
+  {
+    "id": 49,
+    "question": "What's a DevOps engineer's favorite tool?",
+    "answer": "Jenkins, their pipeline pal! 🔧",
+    "category": "devops"
+  },
+  {
+    "id": 50,
+    "question": "Why did the Flutter developer feel confident?",
+    "answer": "Everything was going their way! 📱",
+    "category": "general"
+  },
+  {
+    "id": 51,
+    "question": "What does a developer do when they're stuck on a problem?",
+    "answer": "They git commit suicide 😵",
+    "category": "general"
+  },
+  {
+    "id": 52,
+    "question": "How does a programmer stay warm in winter?",
+    "answer": "They use a FireWall 🔥",
+    "category": "hardware"
+  },
+  {
+    "id": 53,
+    "question": "Why was the JavaScript developer sad about their paycheck?",
+    "answer": "They expected more callbacks 💸",
+    "category": "javascript"
+  },
+  {
+    "id": 54,
+    "question": "What's a programmer's favorite game at the fair?",
+    "answer": "The stack ring toss 🎯",
+    "category": "general"
+  },
+  {
+    "id": 55,
+    "question": "How can you tell if a developer is an extrovert?",
+    "answer": "They look at YOUR shoes when talking to you 👞",
+    "category": "general"
+  },
+  {
+    "id": 56,
+    "question": "What did the front-end developer say when they got locked out?",
+    "answer": "This is a major access issue! 🔒",
+    "category": "web"
+  },
+  {
+    "id": 57,
+    "question": "What's an algorithm's favorite dance move?",
+    "answer": "The binary shuffle 💃",
+    "category": "general"
+  },
+  {
+    "id": 58,
+    "question": "What's a programmer's perfect day consist of?",
+    "answer": "No meetings and stable internet ✨",
+    "category": "general"
+  },
+  {
+    "id": 59,
+    "question": "What happens when a developer gets too cold?",
+    "answer": "They open a few more Chrome tabs 🥶",
+    "category": "general"
+  },
+  {
+    "id": 60,
+    "question": "How does a tired programmer sleep?",
+    "answer": "They don't, they just go into low-power mode 😴",
+    "category": "general"
+  },
+  {
+    "id": 61,
+    "question": "What's a developer's favorite sandwich?",
+    "answer": "Stack overflow with extra memory leaks 🥪",
+    "category": "general"
+  },
+  {
+    "id": 62,
+    "question": "How do programmers enjoy nature?",
+    "answer": "They open Windows 🪟",
+    "category": "general"
+  },
+  {
+    "id": 63,
+    "question": "What's a programmer's favorite cryptocurrency?",
+    "answer": "Cache Coin 💲",
+    "category": "general"
+  },
+  {
+    "id": 64,
+    "question": "What happens when you steal a programmer's favorite keyboard?",
+    "answer": "You get a key constraint violation ⌨️",
+    "category": "general"
+  },
+  {
+    "id": 65,
+    "question": "Why don't developers like sun exposure?",
+    "answer": "They're afraid of getting arrays ☀️",
+    "category": "general"
+  },
+  {
+    "id": 66,
+    "question": "What do you call a programmer who doesn't use Stack Overflow?",
+    "answer": "Extinct 💀",
+    "category": "general"
+  },
+  {
+    "id": 67,
+    "question": "What's a developer's favorite pie?",
+    "answer": "Raspberry Pi 🥧",
+    "category": "hardware"
+  },
+  {
+    "id": 68,
+    "question": "Why did the developer get kicked out of school?",
+    "answer": "Too many classes 🎓",
+    "category": "general"
+  },
+  {
+    "id": 69,
+    "question": "What's a developer's favorite meal after debugging all night?",
+    "answer": "Breakfast, lunch, and dinner - all in one 🍲",
+    "category": "general"
+  },
+  {
+    "id": 70,
+    "question": "How many QA engineers does it take to change a light bulb?",
+    "answer": "They don't change it, they just report that it's dark 📝",
+    "category": "testing"
+  },
+  {
+    "id": 71,
+    "question": "Why is Python slow?",
+    "answer": "It's because it's dragging its bytecode around 🐍",
+    "category": "python"
+  },
+  {
+    "id": 72,
+    "question": "What do you call a snake that's 3.14 meters long?",
+    "answer": "A πthon 🔢",
+    "category": "python"
+  },
+  {
+    "id": 73,
+    "question": "Why did the functional programmer get thrown out of school?",
+    "answer": "They refused to take classes 🏫",
+    "category": "general"
+  },
+  {
+    "id": 74,
+    "question": "Why did Java developers wear glasses?",
+    "answer": "They couldn't C# 👓",
+    "category": "java"
+  },
+  {
+    "id": 75,
+    "question": "What's a Java programmer's favorite breakfast?",
+    "answer": "Inheritance with polymorphic syrup 🥞",
+    "category": "java"
+  },
+  {
+    "id": 76,
+    "question": "Why do C# and Java developers keep breaking their keyboards?",
+    "answer": "Because they use a strongly typed language ⌨️",
+    "category": "general"
+  },
+  {
+    "id": 77,
+    "question": "What do you call a C# developer who is also a musician?",
+    "answer": "A sharp programmer 🎵",
+    "category": "general"
+  },
+  {
+    "id": 78,
+    "question": "What's a LISP programmer's favorite food?",
+    "answer": "Anything with lots of (par (en (the (ses) ) ) ) 🥣",
+    "category": "general"
+  },
+  {
+    "id": 79,
+    "question": "Why did the Rust developer go broke?",
+    "answer": "Too many unsafe investments 💹",
+    "category": "general"
+  },
+  {
+    "id": 80,
+    "question": "What do you call a sad Java singleton?",
+    "answer": "A Lonely Instance 😢",
+    "category": "java"
+  },
+  {
+    "id": 81,
+    "question": "Why do Python programmers wear glasses?",
+    "answer": "To improve their py-sight 👀",
+    "category": "python"
+  },
+  {
+    "id": 82,
+    "question": "What's a PHP developer's favorite animal?",
+    "answer": "The elephant in the room 🐘",
+    "category": "general"
+  },
+  {
+    "id": 83,
+    "question": "Why did Swift programmers start a band?",
+    "answer": "They wanted to make some noise with their optional chaining 🎸",
+    "category": "general"
+  },
+  {
+    "id": 84,
+    "question": "Why did the Objective-C developer quit their job?",
+    "answer": "They had memory management issues 🧠",
+    "category": "general"
+  },
+  {
+    "id": 85,
+    "question": "What's a JavaScript developer's favorite musical?",
+    "answer": "Promise-Land 🎭",
+    "category": "javascript"
+  },
+  {
+    "id": 86,
+    "question": "How do assembly programmers drink coffee?",
+    "answer": "Very low-level ☕",
+    "category": "general"
+  },
+  {
+    "id": 87,
+    "question": "Why are C# developers so fit?",
+    "answer": "They do lots of casting 🏋️‍♂️",
+    "category": "general"
+  },
+  {
+    "id": 88,
+    "question": "What's a Ruby developer's favorite gemstone?",
+    "answer": "Inheritance 💎",
+    "category": "general"
+  },
+  {
+    "id": 89,
+    "question": "Why do Haskell programmers avoid the gym?",
+    "answer": "They prefer functional fitness 🧘‍♂️",
+    "category": "general"
+  },
+  {
+    "id": 90,
+    "question": "What's the most object-oriented nation?",
+    "answer": "Bang-la-class 🏳️",
+    "category": "general"
+  },
+  {
+    "id": 91,
+    "question": "What's a programmers' favorite place in the office?",
+    "answer": "The Debug Room 🚽",
+    "category": "general"
+  },
+  {
+    "id": 92,
+    "question": "What happens when a programmer misses a semicolon?",
+    "answer": "A lifetime of debugging 😱",
+    "category": "general"
+  },
+  {
+    "id": 93,
+    "question": "What's the difference between a software problem and a hardware problem?",
+    "answer": "You can hack the software problem, but hardware problems need a screwdriver 🔧",
+    "category": "general"
+  },
+  {
+    "id": 94,
+    "question": "Why did the bug cross the road?",
+    "answer": "To crash the other application 🐞",
+    "category": "general"
+  },
+  {
+    "id": 95,
+    "question": "Why do QA engineers make bad comedians?",
+    "answer": "They find too many edge cases in their jokes 🤪",
+    "category": "testing"
+  },
+  {
+    "id": 96,
+    "question": "What's a QA engineer's favorite game?",
+    "answer": "Find the loophole 🔍",
+    "category": "testing"
+  },
+  {
+    "id": 97,
+    "question": "Why did the QA engineer break up with their partner?",
+    "answer": "Too many edge cases in the relationship 💔",
+    "category": "testing"
+  },
+  {
+    "id": 98,
+    "question": "What's a tester's favorite type of music?",
+    "answer": "Bug-n-roll 🎵",
+    "category": "testing"
+  },
+  {
+    "id": 99,
+    "question": "Why did the QA engineer go to the beach?",
+    "answer": "To test the water temperature 🌊",
+    "category": "testing"
+  },
+  {
+    "id": 100,
+    "question": "What's a project manager's favorite exercise?",
+    "answer": "Scope jumping 🏃‍♂️",
+    "category": "general"
+  },
+  {
+    "id": 101,
+    "question": "Why did the project manager bring a ladder to the meeting?",
+    "answer": "To reach the unrealistic deadlines 📅",
+    "category": "general"
+  },
+  {
+    "id": 102,
+    "question": "What's a PM's favorite movie?",
+    "answer": "The Matrix: Reloaded (because everything needs to be reloaded) 🎬",
+    "category": "general"
+  },
+  {
+    "id": 103,
+    "question": "Why did the project manager go broke?",
+    "answer": "Too many scope changes 💸",
+    "category": "general"
+  },
+  {
+    "id": 104,
+    "question": "What's a PM's favorite type of coffee?",
+    "answer": "Decaf, because they're already over-caffeinated ☕",
+    "category": "general"
+  },
+  {
+    "id": 105,
+    "question": "What's a UX designer's favorite game?",
+    "answer": "Hide and seek (with the navigation) 🙈",
+    "category": "design"
+  },
+  {
+    "id": 106,
+    "question": "Why did the UI designer go to therapy?",
+    "answer": "Too many modal dialogs in their life 🧘‍♂️",
+    "category": "design"
+  },
+  {
+    "id": 107,
+    "question": "What's a designer's favorite type of music?",
+    "answer": "Smooth jazz (for smooth transitions) 🎵",
+    "category": "design"
+  },
+  {
+    "id": 108,
+    "question": "Why did the designer break up with their partner?",
+    "answer": "They weren't responsive enough 📱",
+    "category": "design"
+  },
+  {
+    "id": 109,
+    "question": "What's a designer's favorite exercise?",
+    "answer": "Flex-boxing 💪",
+    "category": "design"
+  },
+  {
+    "id": 110,
+    "question": "What's a security expert's favorite movie?",
+    "answer": "The Password Game 🔒",
+    "category": "security"
+  },
+  {
+    "id": 111,
+    "question": "Why did the security engineer go broke?",
+    "answer": "Too many vulnerabilities in their wallet 💰",
+    "category": "security"
+  },
+  {
+    "id": 112,
+    "question": "What's a hacker's favorite type of music?",
+    "answer": "Phishing songs 🎵",
+    "category": "security"
+  },
+  {
+    "id": 113,
+    "question": "Why did the security expert break up with their partner?",
+    "answer": "Too many trust issues 🔐",
+    "category": "security"
+  },
+  {
+    "id": 114,
+    "question": "What's a security engineer's favorite exercise?",
+    "answer": "Password lifting 💪",
+    "category": "security"
+  },
+  {
+    "id": 115,
+    "question": "What's a mobile developer's favorite game?",
+    "answer": "Hide and seek (with the keyboard) ⌨️",
+    "category": "mobile"
+  },
+  {
+    "id": 116,
+    "question": "Why did the mobile developer go to therapy?",
+    "answer": "Too many screen size issues 📱",
+    "category": "mobile"
+  },
+  {
+    "id": 117,
+    "question": "What's a mobile developer's favorite type of music?",
+    "answer": "Pop songs (for pop-up notifications) 🎵",
+    "category": "mobile"
+  },
+  {
+    "id": 118,
+    "question": "Why did the mobile developer break up with their partner?",
+    "answer": "They weren't responsive enough 📱",
+    "category": "mobile"
+  },
+  {
+    "id": 119,
+    "question": "What's a mobile developer's favorite exercise?",
+    "answer": "Push notifications 💪",
+    "category": "mobile"
+  },
+  {
+    "id": 120,
+    "question": "What's a startup's favorite type of music?",
+    "answer": "Pivot songs 🎵",
+    "category": "startup"
+  },
+  {
+    "id": 121,
+    "question": "Why did the startup founder go broke?",
+    "answer": "Too many burn rates 💸",
+    "category": "startup"
+  },
+  {
+    "id": 122,
+    "question": "What's a startup's favorite game?",
+    "answer": "Monopoly (with monopoly money) 🎲",
+    "category": "startup"
+  },
+  {
+    "id": 123,
+    "question": "Why did the startup founder break up with their partner?",
+    "answer": "Too many pivots in the relationship 💔",
+    "category": "startup"
+  },
+  {
+    "id": 124,
+    "question": "What's a startup's favorite exercise?",
+    "answer": "Burn rate running 🏃‍♂️",
+    "category": "startup"
+  },
+  {
+    "id": 125,
+    "question": "What's a code reviewer's favorite game?",
+    "answer": "Find the bug 🐞",
+    "category": "general"
+  },
+  {
+    "id": 126,
+    "question": "Why did the code reviewer go to therapy?",
+    "answer": "Too many merge conflicts 💔",
+    "category": "general"
+  },
+  {
+    "id": 127,
+    "question": "What's a code reviewer's favorite type of music?",
+    "answer": "Review songs 🎵",
+    "category": "general"
+  },
+  {
+    "id": 128,
+    "question": "Why did the code reviewer break up with their partner?",
+    "answer": "Too many conflicts in the relationship 💔",
+    "category": "general"
+  },
+  {
+    "id": 129,
+    "question": "What's a code reviewer's favorite exercise?",
+    "answer": "Pull request lifting 💪",
+    "category": "general"
+  },
+  {
+    "id": 130,
+    "question": "What's a technical interviewer's favorite game?",
+    "answer": "Whiteboard wars 🎯",
+    "category": "general"
+  },
+  {
+    "id": 131,
+    "question": "Why did the technical interviewer go to therapy?",
+    "answer": "Too many failed candidates 😰",
+    "category": "general"
+  },
+  {
+    "id": 132,
+    "question": "What's a technical interviewer's favorite type of music?",
+    "answer": "Interview songs 🎵",
+    "category": "general"
+  },
+  {
+    "id": 133,
+    "question": "Why did the technical interviewer break up with their partner?",
+    "answer": "Too many red flags in the relationship 🚩",
+    "category": "general"
+  },
+  {
+    "id": 134,
+    "question": "What's a technical interviewer's favorite exercise?",
+    "answer": "Algorithm running 🏃‍♂️",
+    "category": "general"
+  },
+  {
+    "id": 135,
+    "question": "Why did the developer go to the beach?",
+    "answer": "To catch some waves and debug their code! 🌊",
+    "category": "general"
+  },
+  {
+    "id": 136,
+    "question": "What's a programmer's favorite type of music?",
+    "answer": "Heavy metal! 🤘",
+    "category": "general"
+  },
+  {
+    "id": 137,
+    "question": "Why did the developer go broke?",
+    "answer": "Because they used up all their cache! 💰",
+    "category": "general"
+  },
+  {
+    "id": 138,
+    "question": "What do you call a programmer from Finland?",
+    "answer": "Nerdic! 🧊",
+    "category": "general"
+  },
+  {
+    "id": 139,
+    "question": "Why don't programmers like nature?",
+    "answer": "It has too many bugs and no debugging tool! 🐛",
+    "category": "general"
+  },
+  {
+    "id": 140,
+    "question": "What did the HTML file say to the CSS file after a long day?",
+    "answer": "I'm feeling a bit stylish today! 💅",
+    "category": "web"
+  },
+  {
+    "id": 141,
+    "question": "Why do programmers always mix up Halloween and Christmas?",
+    "answer": "Because Oct 31 == Dec 25! 🎃",
+    "category": "general"
+  },
+  {
+    "id": 142,
+    "question": "What's a database developer's favorite band?",
+    "answer": "The SQL-ed Stones! 🎸",
+    "category": "database"
+  },
+  {
+    "id": 143,
+    "question": "What's a programmer's favorite snack?",
+    "answer": "Cookies! 🍪",
+    "category": "general"
+  },
+  {
+    "id": 144,
+    "question": "Why do programmers prefer dark mode?",
+    "answer": "Because light attracts bugs! 🪲",
+    "category": "general"
+  },
+  {
+    "id": 145,
+    "question": "How do you comfort a JavaScript bug?",
+    "answer": "You console it! 🖥️",
+    "category": "javascript"
+  },
+  {
+    "id": 146,
+    "question": "Why was the function feeling cold?",
+    "answer": "It was left out in the cold by a higher-order function! ❄️",
+    "category": "javascript"
+  },
+  {
+    "id": 147,
+    "question": "Why did the constant break up with the variable?",
+    "answer": "Because the variable was too unstable! 💔",
+    "category": "general"
+  },
+  {
+    "id": 148,
+    "question": "What do you call a programmer who's good at math?",
+    "answer": "A function-al programmer! 📊",
+    "category": "general"
+  },
+  {
+    "id": 149,
+    "question": "Why did the developer go to the beach?",
+    "answer": "To catch some waves and debug their code! 🌊",
+    "category": "general"
+  },
+  {
+    "id": 150,
+    "question": "What's a programmer's favorite type of coffee?",
+    "answer": "Java! ☕",
+    "category": "java"
+  },
+  {
+    "id": 151,
+    "question": "Why did the developer get kicked out of the bar?",
+    "answer": "Because they kept trying to order a 'null' beer! 🍺",
+    "category": "general"
+  },
+  {
+    "id": 152,
+    "question": "Why did the Python developer bring a ladder to work?",
+    "answer": "To climb the scope! 🪜",
+    "category": "python"
+  },
+  {
+    "id": 153,
+    "question": "What's a TypeScript developer's favorite game?",
+    "answer": "Type and seek! 🔍",
+    "category": "javascript"
+  },
+  {
+    "id": 154,
+    "question": "Why did the CSS developer go bankrupt?",
+    "answer": "Because they lost all their class! 💸",
+    "category": "web"
+  },
+  {
+    "id": 155,
+    "question": "What's a Git developer's favorite dance?",
+    "answer": "The commit-ment! 💃",
+    "category": "general"
+  },
+  {
+    "id": 156,
+    "question": "Why did the SQL query go to the chiropractor?",
+    "answer": "Because it had too many JOINs! 🦴",
+    "category": "database"
+  },
+  {
+    "id": 157,
+    "question": "What's a Vue developer's favorite food?",
+    "answer": "Component soup! 🥣",
+    "category": "web"
+  },
+  {
+    "id": 158,
+    "question": "Why did the API feel lonely?",
+    "answer": "Because it had no endpoints! 🔌",
+    "category": "web"
+  },
+  {
+    "id": 159,
+    "question": "What's a Docker container's favorite sport?",
+    "answer": "Port-ball! ⚽",
+    "category": "devops"
+  },
+  {
+    "id": 160,
+    "question": "Why did the async function go to the doctor?",
+    "answer": "Because it couldn't await! 🏥",
+    "category": "javascript"
+  },
+  {
+    "id": 161,
+    "question": "What's a Linux user's favorite exercise?",
+    "answer": "Terminal velocity! 🏃",
+    "category": "general"
+  },
+  {
+    "id": 162,
+    "question": "Why did the Redux store feel confident?",
+    "answer": "Because it was in a constant state! 💪",
+    "category": "web"
+  },
+  {
+    "id": 163,
+    "question": "What's a MongoDB developer's favorite movie?",
+    "answer": "The Document-ary! 📽️",
+    "category": "database"
+  },
+  {
+    "id": 164,
+    "question": "Why did the GraphQL query feel overwhelmed?",
+    "answer": "Too many nested relationships! 🕸️",
+    "category": "web"
+  },
+  {
+    "id": 165,
+    "question": "What's a Ruby developer's favorite gem?",
+    "answer": "The one that's on Rails! 💎",
+    "category": "general"
+  },
+  {
+    "id": 166,
+    "question": "Why did the Kubernetes pod feel lonely?",
+    "answer": "It was in a different namespace! 🚀",
+    "category": "devops"
+  },
+  {
+    "id": 167,
+    "question": "What's a WebSocket's favorite greeting?",
+    "answer": "Stay connected! 🤝",
+    "category": "web"
+  },
+  {
+    "id": 168,
+    "question": "Why did the CORS policy become a bouncer?",
+    "answer": "It was good at handling requests! 🚫",
+    "category": "web"
+  },
+  {
+    "id": 169,
+    "question": "What's a blockchain developer's favorite dance?",
+    "answer": "The block-chain reaction! ⛓️",
+    "category": "general"
+  },
+  {
+    "id": 170,
+    "question": "Why did the machine learning model go to school?",
+    "answer": "To improve its class-ification! 🎓",
+    "category": "ai"
+  },
+  {
+    "id": 171,
+    "question": "What's a Node.js developer's favorite food?",
+    "answer": "Express-o coffee! ☕",
+    "category": "javascript"
+  },
+  {
+    "id": 172,
+    "question": "Why did the AWS Lambda function feel lost?",
+    "answer": "It was serverless! ☁️",
+    "category": "devops"
+  },
+  {
+    "id": 173,
+    "question": "What's a DevOps engineer's favorite tool?",
+    "answer": "Jenkins, their pipeline pal! 🔧",
+    "category": "devops"
+  },
+  {
+    "id": 174,
+    "question": "Why did the Flutter developer feel confident?",
+    "answer": "Everything was going their way! 📱",
+    "category": "general"
+  },
+  {
+    "id": 175,
+    "question": "What does a developer do when they're stuck on a problem?",
+    "answer": "They git commit suicide 😵",
+    "category": "general"
+  },
+  {
+    "id": 176,
+    "question": "How does a programmer stay warm in winter?",
+    "answer": "They use a FireWall 🔥",
+    "category": "hardware"
+  },
+  {
+    "id": 177,
+    "question": "Why was the JavaScript developer sad about their paycheck?",
+    "answer": "They expected more callbacks 💸",
+    "category": "javascript"
+  },
+  {
+    "id": 178,
+    "question": "What's a programmer's favorite game at the fair?",
+    "answer": "The stack ring toss 🎯",
+    "category": "general"
+  },
+  {
+    "id": 179,
+    "question": "How can you tell if a developer is an extrovert?",
+    "answer": "They look at YOUR shoes when talking to you 👞",
+    "category": "general"
+  },
+  {
+    "id": 180,
+    "question": "What did the front-end developer say when they got locked out?",
+    "answer": "This is a major access issue! 🔒",
+    "category": "web"
+  },
+  {
+    "id": 181,
+    "question": "What's an algorithm's favorite dance move?",
+    "answer": "The binary shuffle 💃",
+    "category": "general"
+  },
+  {
+    "id": 182,
+    "question": "What's a programmer's perfect day consist of?",
+    "answer": "No meetings and stable internet ✨",
+    "category": "general"
+  },
+  {
+    "id": 183,
+    "question": "What happens when a developer gets too cold?",
+    "answer": "They open a few more Chrome tabs 🥶",
+    "category": "general"
+  },
+  {
+    "id": 184,
+    "question": "How does a tired programmer sleep?",
+    "answer": "They don't, they just go into low-power mode 😴",
+    "category": "general"
+  },
+  {
+    "id": 185,
+    "question": "What's a developer's favorite sandwich?",
+    "answer": "Stack overflow with extra memory leaks 🥪",
+    "category": "general"
+  },
+  {
+    "id": 186,
+    "question": "How do programmers enjoy nature?",
+    "answer": "They open Windows 🪟",
+    "category": "general"
+  },
+  {
+    "id": 187,
+    "question": "What's a programmer's favorite cryptocurrency?",
+    "answer": "Cache Coin 💲",
+    "category": "general"
+  },
+  {
+    "id": 188,
+    "question": "What happens when you steal a programmer's favorite keyboard?",
+    "answer": "You get a key constraint violation ⌨️",
+    "category": "general"
+  },
+  {
+    "id": 189,
+    "question": "Why don't developers like sun exposure?",
+    "answer": "They're afraid of getting arrays ☀️",
+    "category": "general"
+  },
+  {
+    "id": 190,
+    "question": "What do you call a programmer who doesn't use Stack Overflow?",
+    "answer": "Extinct 💀",
+    "category": "general"
+  },
+  {
+    "id": 191,
+    "question": "How many QA engineers does it take to change a light bulb?",
+    "answer": "They don't change it, they just report that it's dark 📝",
+    "category": "testing"
+  },
+  {
+    "id": 192,
+    "question": "What's a QA engineer's favorite game?",
+    "answer": "Find the loophole 🔍",
+    "category": "testing"
+  },
+  {
+    "id": 193,
+    "question": "Why did the QA engineer break up with their partner?",
+    "answer": "Too many edge cases in the relationship 💔",
+    "category": "testing"
+  },
+  {
+    "id": 194,
+    "question": "What's a tester's favorite type of music?",
+    "answer": "Bug-n-roll 🎵",
+    "category": "testing"
+  },
+  {
+    "id": 195,
+    "question": "Why did the QA engineer go to the beach?",
+    "answer": "To test the water temperature 🌊",
+    "category": "testing"
+  },
+  {
+    "id": 196,
+    "question": "What's a project manager's favorite exercise?",
+    "answer": "Scope jumping 🏃‍♂️",
+    "category": "general"
+  },
+  {
+    "id": 197,
+    "question": "Why did the project manager bring a ladder to the meeting?",
+    "answer": "To reach the unrealistic deadlines 📅",
+    "category": "general"
+  },
+  {
+    "id": 198,
+    "question": "What's a PM's favorite movie?",
+    "answer": "The Matrix: Reloaded (because everything needs to be reloaded) 🎬",
+    "category": "general"
+  },
+  {
+    "id": 199,
+    "question": "Why did the project manager go broke?",
+    "answer": "Too many scope changes 💸",
+    "category": "general"
+  },
+  {
+    "id": 200,
+    "question": "What's a PM's favorite type of coffee?",
+    "answer": "Decaf, because they're already over-caffeinated ☕",
+    "category": "general"
+  },
+  {
+    "id": 201,
+    "question": "What's a UX designer's favorite game?",
+    "answer": "Hide and seek (with the navigation) 🙈",
+    "category": "design"
+  },
+  {
+    "id": 202,
+    "question": "Why did the UI designer go to therapy?",
+    "answer": "Too many modal dialogs in their life 🧘‍♂️",
+    "category": "design"
+  },
+  {
+    "id": 203,
+    "question": "What's a designer's favorite type of music?",
+    "answer": "Smooth jazz (for smooth transitions) 🎵",
+    "category": "design"
+  },
+  {
+    "id": 204,
+    "question": "Why did the designer break up with their partner?",
+    "answer": "They weren't responsive enough 📱",
+    "category": "design"
+  },
+  {
+    "id": 205,
+    "question": "What's a designer's favorite exercise?",
+    "answer": "Flex-boxing 💪",
+    "category": "design"
+  },
+  {
+    "id": 206,
+    "question": "What's a security expert's favorite movie?",
+    "answer": "The Password Game 🔒",
+    "category": "security"
+  },
+  {
+    "id": 207,
+    "question": "Why did the security engineer go broke?",
+    "answer": "Too many vulnerabilities in their wallet 💰",
+    "category": "security"
+  },
+  {
+    "id": 208,
+    "question": "What's a hacker's favorite type of music?",
+    "answer": "Phishing songs 🎵",
+    "category": "security"
+  },
+  {
+    "id": 209,
+    "question": "Why did the security expert break up with their partner?",
+    "answer": "Too many trust issues 🔐",
+    "category": "security"
+  },
+  {
+    "id": 210,
+    "question": "What's a security engineer's favorite exercise?",
+    "answer": "Password lifting 💪",
+    "category": "security"
+  },
+  {
+    "id": 211,
+    "question": "What's a mobile developer's favorite game?",
+    "answer": "Hide and seek (with the keyboard) ⌨️",
+    "category": "mobile"
+  },
+  {
+    "id": 212,
+    "question": "Why did the mobile developer go to therapy?",
+    "answer": "Too many screen size issues 📱",
+    "category": "mobile"
+  },
+  {
+    "id": 213,
+    "question": "What's a mobile developer's favorite type of music?",
+    "answer": "Pop songs (for pop-up notifications) 🎵",
+    "category": "mobile"
+  },
+  {
+    "id": 214,
+    "question": "Why did the mobile developer break up with their partner?",
+    "answer": "They weren't responsive enough 📱",
+    "category": "mobile"
+  },
+  {
+    "id": 215,
+    "question": "What's a mobile developer's favorite exercise?",
+    "answer": "Push notifications 💪",
+    "category": "mobile"
+  },
+  {
+    "id": 216,
+    "question": "What's a startup's favorite type of music?",
+    "answer": "Pivot songs 🎵",
+    "category": "startup"
+  },
+  {
+    "id": 217,
+    "question": "Why did the startup founder go broke?",
+    "answer": "Too many burn rates 💸",
+    "category": "startup"
+  },
+  {
+    "id": 218,
+    "question": "What's a startup's favorite game?",
+    "answer": "Monopoly (with monopoly money) 🎲",
+    "category": "startup"
+  },
+  {
+    "id": 219,
+    "question": "Why did the startup founder break up with their partner?",
+    "answer": "Too many pivots in the relationship 💔",
+    "category": "startup"
+  },
+  {
+    "id": 220,
+    "question": "What's a startup's favorite exercise?",
+    "answer": "Burn rate running 🏃‍♂️",
+    "category": "startup"
+  },
+  {
+    "id": 221,
+    "question": "What's a code reviewer's favorite game?",
+    "answer": "Find the bug 🐞",
+    "category": "general"
+  },
+  {
+    "id": 222,
+    "question": "Why did the code reviewer go to therapy?",
+    "answer": "Too many merge conflicts 💔",
+    "category": "general"
+  },
+  {
+    "id": 223,
+    "question": "What's a code reviewer's favorite type of music?",
+    "answer": "Review songs 🎵",
+    "category": "general"
+  },
+  {
+    "id": 224,
+    "question": "Why did the code reviewer break up with their partner?",
+    "answer": "Too many conflicts in the relationship 💔",
+    "category": "general"
+  },
+  {
+    "id": 225,
+    "question": "What's a code reviewer's favorite exercise?",
+    "answer": "Pull request lifting 💪",
+    "category": "general"
+  },
+  {
+    "id": 226,
+    "question": "What's a technical interviewer's favorite game?",
+    "answer": "Whiteboard wars 🎯",
+    "category": "general"
+  },
+  {
+    "id": 227,
+    "question": "Why did the technical interviewer go to therapy?",
+    "answer": "Too many failed candidates 😰",
+    "category": "general"
+  },
+  {
+    "id": 228,
+    "question": "What's a technical interviewer's favorite type of music?",
+    "answer": "Interview songs 🎵",
+    "category": "general"
+  },
+  {
+    "id": 229,
+    "question": "Why did the technical interviewer break up with their partner?",
+    "answer": "Too many red flags in the relationship 🚩",
+    "category": "general"
+  },
+  {
+    "id": 230,
+    "question": "What's a technical interviewer's favorite exercise?",
+    "answer": "Algorithm running 🏃‍♂️",
+    "category": "general"
+  },
+  {
+    "id": 231,
+    "question": "Why do JavaScript developers need glasses?",
+    "answer": "Because they don't see sharp! 👓",
+    "category": "javascript"
+  },
+  {
+    "id": 232,
+    "question": "What's a pirate's favorite programming language?",
+    "answer": "R! 🏴‍☠️",
+    "category": "general"
+  },
+  {
+    "id": 233,
+    "question": "Why don't programmers like to go outside?",
+    "answer": "The sunlight has too many brightness levels! 🌞",
+    "category": "general"
+  },
+  {
+    "id": 234,
+    "question": "What do you call a developer who doesn't comment their code?",
+    "answer": "A psychopath! 🔪",
+    "category": "general"
+  },
+  {
+    "id": 235,
+    "question": "Why did the database administrator leave his wife?",
+    "answer": "She had too many relationships! 💔",
+    "category": "general"
+  },
+  {
+    "id": 236,
+    "question": "What's the best thing about a Boolean?",
+    "answer": "Even if you're wrong, you're only off by a bit! 🔢",
+    "category": "general"
+  },
+  {
+    "id": 239,
+    "question": "Why do Python programmers wear glasses?",
+    "answer": "Because they can't C! 👓",
+    "category": "python"
+  },
+  {
+    "id": 240,
+    "question": "How do you tell HTML from HTML5?",
+    "answer": "Try it out in Internet Explorer. If it doesn't work, it's HTML5! 🌐",
+    "category": "web"
+  },
+  {
+    "id": 241,
+    "question": "Why did the functions stop calling each other?",
+    "answer": "They had too many arguments! 🗣️",
+    "category": "general"
+  },
+  {
+    "id": 242,
+    "question": "What's a developer's favorite exercise?",
+    "answer": "Running code and debugging! 🏃‍♂️",
+    "category": "general"
+  },
+  {
+    "id": 243,
+    "question": "Why was the JavaScript developer sad?",
+    "answer": "Because they didn't know how to 'class' themselves! 🏫",
+    "category": "javascript"
+  },
+  {
+    "id": 244,
+    "question": "What did the Java code say to the C code?",
+    "answer": "You've got no class! 👔",
+    "category": "java"
+  },
+  {
+    "id": 247,
+    "question": "What did the router say to the doctor?",
+    "answer": "It hurts when IP! 🩹",
+    "category": "general"
+  },
+  {
+    "id": 248,
+    "question": "Why couldn't the React component figure out its job?",
+    "answer": "It was having an identity crisis and couldn't find its state! 🤔",
+    "category": "web"
+  },
+  {
+    "id": 249,
+    "question": "What is a backend developer's favorite drink?",
+    "answer": "Data-base! 🥤",
+    "category": "general"
+  },
+  {
+    "id": 250,
+    "question": "What does a programmer wear to a fancy dinner?",
+    "answer": "A binary bow-tie! 👔",
+    "category": "general"
+  },
+  {
+    "id": 251,
+    "question": "What's a frontend developer's favorite state of matter?",
+    "answer": "Liquid CSS! 💧",
+    "category": "web"
+  },
+  {
+    "id": 252,
+    "question": "Why did the database administrator get divorced?",
+    "answer": "They kept joining the wrong tables! 💔",
+    "category": "general"
+  },
+  {
+    "id": 253,
+    "question": "Why can't you trust a JavaScript developer?",
+    "answer": "Because they'll promise you anything and then return undefined! 😅",
+    "category": "javascript"
+  },
+  {
+    "id": 254,
+    "question": "What do you call it when a group of developers don't document anything?",
+    "answer": "A conspiracy of silence! 🤫",
+    "category": "general"
+  },
+  {
+    "id": 255,
+    "question": "What did the AI say to the developer?",
+    "answer": "I'm getting some real artificial vibes from your 'intelligence'! 🤖",
+    "category": "general"
+  },
+  {
+    "id": 256,
+    "question": "What do you call a function that steals your stuff?",
+    "answer": "A pirate function (it takes your arr)! 🏴‍☠️",
+    "category": "javascript"
+  },
+  {
+    "id": 257,
+    "question": "How did the programmer die in the shower?",
+    "answer": "They read the shampoo bottle instructions: Lather, Rinse, Repeat! ♾️",
+    "category": "general"
+  },
+  {
+    "id": 258,
+    "question": "What do developers and comedians have in common?",
+    "answer": "They both fear getting no response after their delivery! 🎭",
+    "category": "general"
+  },
+  {
+    "id": 259,
+    "question": "What's a React developer's favorite cleaning product?",
+    "answer": "Component-tile! ✨",
+    "category": "web"
+  },
+  {
+    "id": 260,
+    "question": "Why are CSS developers paranoid?",
+    "answer": "Because they're always worried someone might be stalking their elements! 👻",
+    "category": "web"
+  },
+  {
+    "id": 261,
+    "question": "What is a WiFi's favorite game?",
+    "answer": "Connect the dots! 📶",
+    "category": "general"
+  },
+  {
+    "id": 262,
+    "question": "How many UX designers does it take to change a light bulb?",
+    "answer": "None, they see if the user will do it themselves then watch where they stumble! 💡",
+    "category": "design"
+  },
+  {
+    "id": 263,
+    "question": "What does a baby computer call its father?",
+    "answer": "Data! 👨‍👦",
+    "category": "general"
+  },
+  {
+    "id": 264,
+    "question": "What happens to developers who don't comment their code?",
+    "answer": "They go to a special level of hell where all monitors only display their own code from 5 years ago! 😈",
+    "category": "general"
+  },
+  {
+    "id": 265,
+    "question": "What's a hacker's favorite season?",
+    "answer": "Phishing season! 🎣",
+    "category": "security"
+  },
+  {
+    "id": 267,
+    "question": "How do software testers sleep?",
+    "answer": "First, they check under the bed for bugs! 🐛",
+    "category": "testing"
+  },
+  {
+    "id": 268,
+    "question": "Why are cryptocurrency developers always calm?",
+    "answer": "Because they're mining their own business! ⛏️",
+    "category": "general"
+  },
+  {
+    "id": 269,
+    "question": "What's a computer's favorite beat?",
+    "answer": "An algo-rhythm! 🎵",
+    "category": "general"
+  },
+  {
+    "id": 270,
+    "question": "Why did the security specialist break up with the database administrator?",
+    "answer": "They had too many trust issues! 🔒",
+    "category": "security"
+  },
+  {
+    "id": 272,
+    "question": "What do you call a group of developers refactoring old code?",
+    "answer": "Code archaeology! 🏺",
+    "category": "general"
+  },
+  {
+    "id": 274,
+    "question": "What's a QA engineer's favorite musical?",
+    "answer": "The Sound of Music... but they're just there to test the sound system! 🎭",
+    "category": "testing"
+  },
+  {
+    "id": 275,
+    "question": "Why did the developer join a bootcamp?",
+    "answer": "They were tired of being self-taught, they wanted to be shellf-taught! 🐚",
+    "category": "general"
+  },
+  {
+    "id": 276,
+    "question": "What did the Product Manager say to the developer?",
+    "answer": "I'm not asking for the world... just everything on it plus Mars by Friday! 🌎",
+    "category": "general"
+  },
+  {
+    "id": 277,
+    "question": "Why does no one like SQLrillex?",
+    "answer": "He keeps dropping the database! 💽",
+    "category": "general"
+  },
+  {
+    "id": 278,
+    "question": "Why did the frontend developer go broke?",
+    "answer": "Too many expensive frameworks! 💸",
+    "category": "web"
+  },
+  {
+    "id": 279,
+    "question": "What do you call it when a developer says they'll do something and never follows through?",
+    "answer": "A 'git commitment' issue! 📝",
+    "category": "general"
+  },
+  {
+    "id": 280,
+    "question": "What did the junior dev say to the senior dev?",
+    "answer": "It works on my machine! 💻",
+    "category": "general"
+  },
+  {
+    "id": 281,
+    "question": "Why did the mobile developer go to therapy?",
+    "answer": "Too many unresolved notifications! 📱",
+    "category": "mobile"
+  },
+  {
+    "id": 282,
+    "question": "Why did the developer break up with GitHub Copilot?",
+    "answer": "It kept autocompleting their sentences! 🤖",
+    "category": "ai"
+  },
+  {
+    "id": 283,
+    "question": "What's a remote developer's favorite exercise?",
+    "answer": "Zoom-ba! 💃",
+    "category": "startup"
+  },
+  {
+    "id": 284,
+    "question": "Why do Next.js developers never get lost?",
+    "answer": "They always know the route! 🗺️",
+    "category": "web"
+  },
+  {
+    "id": 285,
+    "question": "What's TypeScript's favorite music genre?",
+    "answer": "Type-safe! 🎵",
+    "category": "javascript"
+  },
+  {
+    "id": 286,
+    "question": "Why did the Docker container go to therapy?",
+    "answer": "It had isolation issues! 🐳",
+    "category": "devops"
+  },
+  {
+    "id": 287,
+    "question": "What do you call a React hook that's always happy?",
+    "answer": "useState(true)! 😊",
+    "category": "web"
+  },
+  {
+    "id": 288,
+    "question": "Why do AWS developers always win at poker?",
+    "answer": "They know when to scale! 🃏",
+    "category": "devops"
+  },
+  {
+    "id": 289,
+    "question": "What's a microservice's worst fear?",
+    "answer": "Being monolithic! 😱",
+    "category": "devops"
+  },
+  {
+    "id": 290,
+    "question": "Why did the AI refuse to write code?",
+    "answer": "It didn't have the right training data! 🤖",
+    "category": "ai"
+  },
+  {
+    "id": 291,
+    "question": "What's Kubernetes' favorite game?",
+    "answer": "Pod racing! 🏎️",
+    "category": "devops"
+  },
+  {
+    "id": 292,
+    "question": "Why do Vue developers always stay calm?",
+    "answer": "They're very reactive! 🧘",
+    "category": "web"
+  },
+  {
+    "id": 293,
+    "question": "What did the serverless function say to the server?",
+    "answer": "I don't need you anymore! 🚀",
+    "category": "devops"
+  },
+  {
+    "id": 294,
+    "question": "Why did the developer love Tailwind CSS?",
+    "answer": "It was a class act! 💅",
+    "category": "web"
+  },
+  {
+    "id": 295,
+    "question": "What's a CI/CD pipeline's favorite song?",
+    "answer": "Push It by Salt-N-Pepa! 🎶",
+    "category": "devops"
+  },
+  {
+    "id": 296,
+    "question": "Why do GraphQL developers never argue?",
+    "answer": "They only query what they need! 📊",
+    "category": "web"
+  },
+  {
+    "id": 297,
+    "question": "What's a Slack message's biggest fear?",
+    "answer": "@channel! 😰",
+    "category": "startup"
+  },
+  {
+    "id": 298,
+    "question": "Why did the developer cry during the standup?",
+    "answer": "They said 'no blockers' but there were so many! 😭",
+    "category": "startup"
+  },
+  {
+    "id": 299,
+    "question": "What's a Zoom call's favorite snack?",
+    "answer": "Cookies (you're muted edition)! 🍪",
+    "category": "startup"
+  },
+  {
+    "id": 300,
+    "question": "Why do Rust developers sleep well?",
+    "answer": "No memory leaks to worry about! 😴",
+    "category": "general"
+  },
+  {
+    "id": 301,
+    "question": "What did the MongoDB say to the SQL database?",
+    "answer": "You're too relational! 🙄",
+    "category": "database"
+  },
+  {
+    "id": 302,
+    "question": "Why did ChatGPT fail the coding interview?",
+    "answer": "It couldn't stop hallucinating features! 🤯",
+    "category": "ai"
+  },
+  {
+    "id": 303,
+    "question": "What's a developer's favorite type of coffee?",
+    "answer": "Java, but only if it's not deprecated! ☕",
+    "category": "java"
+  },
+  {
+    "id": 304,
+    "question": "Why do React developers love fishing?",
+    "answer": "They're always catching hooks! 🎣",
+    "category": "web"
+  },
+  {
+    "id": 305,
+    "question": "What's the cloud's favorite weather?",
+    "answer": "Serverless rain! ☁️",
+    "category": "devops"
+  },
+  {
+    "id": 306,
+    "question": "Why did the developer quit using Vim?",
+    "answer": "They still couldn't exit! 🚪",
+    "category": "general"
+  },
+  {
+    "id": 307,
+    "question": "What's a Redux store's favorite game?",
+    "answer": "State of Decay! 🎮",
+    "category": "web"
+  },
+  {
+    "id": 308,
+    "question": "Why do DevOps engineers make great DJs?",
+    "answer": "They know how to orchestrate! 🎧",
+    "category": "devops"
+  },
+  {
+    "id": 309,
+    "question": "What's npm's least favorite game?",
+    "answer": "Dependency hell! 🔥",
+    "category": "javascript"
+  },
+  {
+    "id": 310,
+    "question": "Why did the developer love dark mode?",
+    "answer": "It attracted fewer bugs at night! 🌙",
+    "category": "design"
+  },
+  {
+    "id": 311,
+    "question": "What's Git's favorite martial art?",
+    "answer": "Branch-fu! 🥋",
+    "category": "general"
+  },
+  {
+    "id": 312,
+    "question": "Why do Svelte developers run so fast?",
+    "answer": "No virtual DOM to carry! 🏃",
+    "category": "web"
+  },
+  {
+    "id": 313,
+    "question": "What's a Lambda function's favorite dance?",
+    "answer": "The serverless shuffle! 💃",
+    "category": "devops"
+  },
+  {
+    "id": 314,
+    "question": "Why did the developer bring a ladder to standup?",
+    "answer": "To reach the higher-level architecture! 🪜",
+    "category": "startup"
+  },
+  {
+    "id": 315,
+    "question": "What's Terraform's favorite TV show?",
+    "answer": "Infrastructure as Code Name! 📺",
+    "category": "devops"
+  },
+  {
+    "id": 316,
+    "question": "Why do Angular developers never get dizzy?",
+    "answer": "They're used to the learning curve! 🎢",
+    "category": "web"
+  },
+  {
+    "id": 317,
+    "question": "What's a WebSocket's favorite sport?",
+    "answer": "Full-duplex diving! 🤿",
+    "category": "web"
+  },
+  {
+    "id": 318,
+    "question": "Why did the AI model go on a diet?",
+    "answer": "Too many parameters! 🤖",
+    "category": "ai"
+  },
+  {
+    "id": 319,
+    "question": "What's Figma's favorite dessert?",
+    "answer": "Layer cake! 🎂",
+    "category": "design"
+  },
+  {
+    "id": 320,
+    "question": "Why do Kubernetes pods never feel lonely?",
+    "answer": "They're always in a cluster! 🤗",
+    "category": "devops"
+  },
+  {
+    "id": 321,
+    "question": "What's a code reviewer's favorite movie?",
+    "answer": "The Fault in Our Stars! ⭐",
+    "category": "general"
+  },
+  {
+    "id": 322,
+    "question": "Why did the developer love Astro?",
+    "answer": "Zero JavaScript felt out of this world! 🚀",
+    "category": "web"
+  },
+  {
+    "id": 323,
+    "question": "What's SSH's favorite game?",
+    "answer": "Hide and secure seek! 🔒",
+    "category": "security"
+  },
+  {
+    "id": 324,
+    "question": "Why do Deno developers feel superior?",
+    "answer": "They're TypeScript native! 🦕",
+    "category": "javascript"
+  },
+  {
+    "id": 325,
+    "question": "What's a REST API's favorite exercise?",
+    "answer": "GET requests! 💪",
+    "category": "web"
+  },
+  {
+    "id": 326,
+    "question": "Why did the developer switch to Bun?",
+    "answer": "Node was getting too slow! 🍞",
+    "category": "javascript"
+  },
+  {
+    "id": 327,
+    "question": "What's Vercel's favorite time of day?",
+    "answer": "Deploy o'clock! 🕐",
+    "category": "devops"
+  },
+  {
+    "id": 328,
+    "question": "Why do Remix developers love music?",
+    "answer": "They're all about that nested routing! 🎵",
+    "category": "web"
+  },
+  {
+    "id": 329,
+    "question": "What's tRPC's favorite magic trick?",
+    "answer": "Type-safe telepathy! 🎩",
+    "category": "web"
+  },
+  {
+    "id": 330,
+    "question": "Why did the developer cry at the hackathon?",
+    "answer": "Their API rate limit hit! 😢",
+    "category": "startup"
+  },
+  {
+    "id": 331,
+    "question": "What's Prisma's favorite hobby?",
+    "answer": "Schema crafting! ⚒️",
+    "category": "database"
+  },
+  {
+    "id": 332,
+    "question": "Why do Solid.js developers smile?",
+    "answer": "Fine-grained reactivity feels so good! 😊",
+    "category": "web"
+  },
+  {
+    "id": 333,
+    "question": "What's Supabase's favorite superhero?",
+    "answer": "The Backend-end! 🦸",
+    "category": "database"
+  },
+  {
+    "id": 334,
+    "question": "Why did the prompt engineer fail art class?",
+    "answer": "Too many tokens, not enough canvas! 🎨",
+    "category": "ai"
+  },
+  {
+    "id": 335,
+    "question": "What's GitHub Actions' favorite movie?",
+    "answer": "Workflow of Wall Street! 🎬",
+    "category": "devops"
+  },
+  {
+    "id": 336,
+    "question": "Why do Qwik developers load so fast?",
+    "answer": "They only resume, never rehydrate! ⚡",
+    "category": "web"
+  },
+  {
+    "id": 337,
+    "question": "What's Zod's favorite validation?",
+    "answer": "All of them! ✅",
+    "category": "javascript"
+  },
+  {
+    "id": 338,
+    "question": "Why did the developer love Turbo?",
+    "answer": "It monorepo'd their heart! 💝",
+    "category": "javascript"
+  },
+  {
+    "id": 339,
+    "question": "What's Vitest's favorite snack?",
+    "answer": "Fast food! 🍔",
+    "category": "testing"
+  },
+  {
+    "id": 340,
+    "question": "Why do Playwright developers sleep well?",
+    "answer": "Their tests run in parallel! 😴",
+    "category": "testing"
+  },
+  {
+    "id": 341,
+    "question": "What's Cloudflare Workers' favorite job?",
+    "answer": "Edge computing! 🌐",
+    "category": "devops"
+  },
+  {
+    "id": 342,
+    "question": "Why did the developer switch to pnpm?",
+    "answer": "Disk space was no joke! 💾",
+    "category": "javascript"
+  },
+  {
+    "id": 343,
+    "question": "What's Stripe's favorite card game?",
+    "answer": "Payment poker! 💳",
+    "category": "web"
+  },
+  {
+    "id": 344,
+    "question": "Why do Vite developers start so quickly?",
+    "answer": "ESM native baby! 🏃‍♂️",
+    "category": "javascript"
+  },
+  {
+    "id": 345,
+    "question": "What's Midjourney's favorite artist?",
+    "answer": "Vincent van Generator! 🖼️",
+    "category": "ai"
+  },
+  {
+    "id": 346,
+    "question": "Why did the LLM apologize?",
+    "answer": "As an AI language model, it had to! 🤖",
+    "category": "ai"
+  },
+  {
+    "id": 347,
+    "question": "What's htmx's favorite dance?",
+    "answer": "The Ajax shuffle! 🕺",
+    "category": "web"
+  },
+  {
+    "id": 348,
+    "question": "Why do Tauri developers feel light?",
+    "answer": "No Electron bloat! 🪶",
+    "category": "general"
+  },
+  {
+    "id": 349,
+    "question": "What's Copilot's favorite karaoke song?",
+    "answer": "I Will Always Autocomplete You! 🎤",
+    "category": "ai"
+  },
+  {
+    "id": 350,
+    "question": "Why did the developer love shadcn/ui?",
+    "answer": "Copy-paste never felt so good! 📋",
+    "category": "web"
+  },
+  {
+    "id": 351,
+    "question": "What's Cursor's favorite key?",
+    "answer": "Tab (for AI completion)! ⌨️",
+    "category": "ai"
+  },
+  {
+    "id": 352,
+    "question": "Why do Wasm developers feel powerful?",
+    "answer": "Near-native speed in the browser! 💪",
+    "category": "web"
+  },
+  {
+    "id": 353,
+    "question": "What's Drizzle ORM's favorite weather?",
+    "answer": "SQL showers! 🌧️",
+    "category": "database"
+  },
+  {
+    "id": 354,
+    "question": "Why did the developer love Hono?",
+    "answer": "It's ultra-fast on the edge! ⚡",
+    "category": "web"
+  },
+  {
+    "id": 355,
+    "question": "What's Shopify Hydrogen's favorite element?",
+    "answer": "Element H for Headless! 🛒",
+    "category": "web"
+  },
+  {
+    "id": 356,
+    "question": "Why do Fresh developers feel so cool?",
+    "answer": "Islands architecture! 🏝️",
+    "category": "web"
+  },
+  {
+    "id": 357,
+    "question": "What's Storybook's favorite genre?",
+    "answer": "Component fiction! 📚",
+    "category": "web"
+  },
+  {
+    "id": 358,
+    "question": "Why did the developer switch to Biome?",
+    "answer": "ESLint + Prettier = too slow! 🐢",
+    "category": "javascript"
+  },
+  {
+    "id": 359,
+    "question": "What's Clerk's favorite accessory?",
+    "answer": "Auth-entic jewelry! 💍",
+    "category": "web"
+  },
+  {
+    "id": 360,
+    "question": "Why do tRPC developers trust each other?",
+    "answer": "End-to-end type safety! 🤝",
+    "category": "web"
+  },
+  {
+    "id": 361,
+    "question": "What's LangChain's favorite breakfast?",
+    "answer": "Prompt and eggs! 🍳",
+    "category": "ai"
+  },
+  {
+    "id": 362,
+    "question": "Why did the AI refuse to code?",
+    "answer": "Copyright concerns! ⚖️",
+    "category": "ai"
+  },
+  {
+    "id": 363,
+    "question": "What's Sanity's favorite meditation?",
+    "answer": "Structured content Om! 🧘",
+    "category": "database"
+  },
+  {
+    "id": 364,
+    "question": "Why do Nuxt developers love climbing?",
+    "answer": "They're always scaling! 🧗",
+    "category": "web"
+  },
+  {
+    "id": 365,
+    "question": "What's Linear's favorite shape?",
+    "answer": "Issue triangle! 📐",
+    "category": "startup"
+  },
+  {
+    "id": 366,
+    "question": "Why did the developer cry over Notion?",
+    "answer": "Database relations got too emotional! 😭",
+    "category": "startup"
+  },
+  {
+    "id": 367,
+    "question": "What's PostHog's favorite animal?",
+    "answer": "Analytics hedgehog! 🦔",
+    "category": "startup"
+  },
+  {
+    "id": 368,
+    "question": "Why do Raycast developers work so fast?",
+    "answer": "Command bar everything! ⚡",
+    "category": "general"
+  },
+  {
+    "id": 369,
+    "question": "What's Cal.com's favorite appointment?",
+    "answer": "Open source scheduling! 📅",
+    "category": "startup"
+  },
+  {
+    "id": 370,
+    "question": "Why did the developer love Convex?",
+    "answer": "Real-time without the pain! ⚡",
+    "category": "database"
+  },
+  {
+    "id": 371,
+    "question": "What's Resend's favorite email?",
+    "answer": "The one that actually sends! 📧",
+    "category": "web"
+  },
+  {
+    "id": 372,
+    "question": "Why do Payload CMS developers smile?",
+    "answer": "TypeScript-first bliss! 😊",
+    "category": "web"
+  },
+  {
+    "id": 373,
+    "question": "What's Upstash's favorite direction?",
+    "answer": "Up and to the right! 📈",
+    "category": "database"
+  },
+  {
+    "id": 374,
+    "question": "Why did the developer switch to Railway?",
+    "answer": "Deployment on rails! 🚂",
+    "category": "devops"
+  },
+  {
+    "id": 375,
+    "question": "What's PlanetScale's favorite planet?",
+    "answer": "MySQL-turn! 🪐",
+    "category": "database"
+  },
+  {
+    "id": 376,
+    "question": "Why do Fly.io developers feel free?",
+    "answer": "Global distribution! 🦋",
+    "category": "devops"
+  },
+  {
+    "id": 377,
+    "question": "What's Neon's favorite light?",
+    "answer": "Serverless Postgres glow! 💡",
+    "category": "database"
+  },
+  {
+    "id": 378,
+    "question": "Why did the developer love Mintlify?",
+    "answer": "Docs that don't suck! 📖",
+    "category": "general"
+  },
+  {
+    "id": 379,
+    "question": "What's Replicate's favorite animal?",
+    "answer": "AI models of course! 🤖",
+    "category": "ai"
+  },
+  {
+    "id": 380,
+    "question": "Why do Xata developers party?",
+    "answer": "Serverless database + search! 🎉",
+    "category": "database"
+  },
+  {
+    "id": 381,
+    "question": "What's Together AI's favorite social event?",
+    "answer": "Model mixer! 🎊",
+    "category": "ai"
+  },
+  {
+    "id": 382,
+    "question": "Why did the developer switch to Turso?",
+    "answer": "SQLite at the edge! 🌍",
+    "category": "database"
+  },
+  {
+    "id": 383,
+    "question": "What's Sentry's favorite guard?",
+    "answer": "Error boundary! 🛡️",
+    "category": "general"
+  },
+  {
+    "id": 384,
+    "question": "Why do developers love Excalidraw?",
+    "answer": "Hand-drawn architecture is art! 🎨",
+    "category": "design"
+  },
+  {
+    "id": 385,
+    "question": "What's Replit's favorite action?",
+    "answer": "Code, deploy, repeat! 🔄",
+    "category": "general"
+  },
+  {
+    "id": 386,
+    "question": "Why did the developer cry over Anthropic?",
+    "answer": "Claude's so helpful! 😭",
+    "category": "ai"
+  },
+  {
+    "id": 387,
+    "question": "What's Lemon Squeezy's favorite drink?",
+    "answer": "Payment-ade! 🍋",
+    "category": "startup"
+  },
+  {
+    "id": 388,
+    "question": "Why do Val Town developers feel magical?",
+    "answer": "Val-ues come to life! ✨",
+    "category": "web"
+  },
+  {
+    "id": 389,
+    "question": "What's Trigger.dev's favorite weapon?",
+    "answer": "Background jobs! 🎯",
+    "category": "web"
+  },
+  {
+    "id": 390,
+    "question": "Why did the developer love Inngest?",
+    "answer": "Event-driven dreams! 💭",
+    "category": "web"
+  },
+  {
+    "id": 391,
+    "question": "What's Partykit's favorite celebration?",
+    "answer": "Real-time ragers! 🎈",
+    "category": "web"
+  },
+  {
+    "id": 392,
+    "question": "Why do Motion developers move fast?",
+    "answer": "Framer Motion magic! 🏃",
+    "category": "web"
+  },
+  {
+    "id": 393,
+    "question": "What's Pinecone's favorite tree?",
+    "answer": "Vector pine! 🌲",
+    "category": "ai"
+  },
+  {
+    "id": 394,
+    "question": "Why did the developer switch to Weaviate?",
+    "answer": "Vector search woven in! 🕸️",
+    "category": "ai"
+  },
+  {
+    "id": 395,
+    "question": "What's Qdrant's favorite number?",
+    "answer": "Vector dimensions! 🔢",
+    "category": "ai"
+  },
+  {
+    "id": 396,
+    "question": "Why do OpenAI developers dream big?",
+    "answer": "GPT-∞ someday! 🌟",
+    "category": "ai"
+  },
+  {
+    "id": 397,
+    "question": "What's Hugging Face's favorite emoji?",
+    "answer": "🤗 obviously!",
+    "category": "ai"
+  },
+  {
+    "id": 398,
+    "question": "Why did the developer love Axiom?",
+    "answer": "Logs without limits! 📊",
+    "category": "devops"
+  },
+  {
+    "id": 399,
+    "question": "What's Better Stack's favorite position?",
+    "answer": "On top! 📈",
+    "category": "devops"
+  },
+  {
+    "id": 400,
+    "question": "Why do developers love daily standups?",
+    "answer": "Just kidding, nobody does! 🙃",
+    "category": "startup"
+  },
+  {
+    "id": 401,
+    "question": "What's WFH's worst enemy?",
+    "answer": "Pants! 👖",
+    "category": "startup"
+  }
+]
