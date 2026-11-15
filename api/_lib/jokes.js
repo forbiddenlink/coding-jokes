@@ -31,6 +31,9 @@ function wantsJson(req) {
 }
 
 function respond(req, res, joke) {
+    // The body format can come from the Accept header, and these responses are
+    // publicly cached, so the cache key must include it.
+    res.setHeader('Vary', 'Accept');
     if (wantsJson(req)) {
         res.json({
             id: joke.id,

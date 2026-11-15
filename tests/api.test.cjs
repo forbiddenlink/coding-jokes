@@ -83,3 +83,10 @@ test('/api/today returns the same joke as pickToday', () => {
     const res = call(todayHandler, { query: { format: 'json' } });
     assert.equal(JSON.parse(res.body).id, pickToday(data, new Date()).id);
 });
+
+test('responses that depend on Accept tell caches so', () => {
+    const res = call(todayHandler, { headers: { accept: 'application/json' } });
+    assert.equal(res.headers['vary'], 'Accept');
+    const text = call(randomHandler, {});
+    assert.equal(text.headers['vary'], 'Accept');
+});
